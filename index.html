@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Visual Novel Template</title>
+
+        <link rel = "stylesheet" href = "style.css" id = "style2">
+        <link rel = "stylesheet" href = "def.css" id = "defStyle">
+        <meta name="viewport" content="width=device-width">
+        <meta charset="utf-8"/>
+    </head>
+
+    <body>
+        <div id = "game-container">
+            <div id = "game-screen">
+                <div id = "left-sprite" class = "sprite"></div>
+                <div id = "center-sprite" class = "sprite"></div>
+                <div id = "right-sprite" class = "sprite"></div>
+                <div id = "menu-div" class = "invisible">
+                    <button type="button" class = "option-div" id = "choice1"></button>
+                    <button type="button" class = "option-div" id = "choice2"></button>
+                </div>
+                <p id = "dialogue-speaker"></p>
+                <button id = "dialogue-btn">
+                    <p id = "dialogue-p"></p>
+                </button>
+            </div>
+            <script src = "def.js"></script>
+            <script src = "script.js"></script>
+        </div>
+    </body>
+</html>

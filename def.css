@@ -1,0 +1,93 @@
+*{
+    border: none;
+}
+
+.invisible{
+    display:none !important;
+}
+
+
+#game-container{
+    justify-content: center;
+}
+
+#game-screen{
+    display: grid;
+    /* 3.75vw = one sq. width & height */
+    width: 90vw;
+    height: 60vw;
+    grid-template-columns: repeat(24, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    background-color: pink;
+}
+
+#left-sprite{
+    grid-column: 3/9;
+    background-color: beige;
+}
+
+#center-sprite{
+    grid-column: 10/16;
+    background-color: green;
+}
+
+#right-sprite{
+    grid-column: 17/23;
+    background-color: aqua;
+}
+
+.sprite{
+    grid-row: 2/15;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+#dialogue-btn{
+    grid-row: 12/16;
+    grid-column: 2/24;
+    background-color: blueviolet;
+    cursor: pointer;
+}
+
+#menu-div{
+    grid-row: 4/10;
+    grid-column: 6/20;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 5;
+}
+
+.option-div{
+    height: 7.5vw;
+    width: 100%;
+    background-color: cadetblue;
+}
+
+button {
+    border: none;
+    padding: 0;
+    display: block;
+    cursor: pointer;
+}
+
+button:disabled{
+    color: red;
+    cursor:default;
+}
+
+#dialogue-p{
+    display: block;
+    margin-left: 3.75vw;
+    margin-top: 0;
+    font-size: 1.75vw;
+    text-align: left;
+}
+
+#dialogue-speaker{
+    margin: 0;
+    font-size: 3.25vw;
+    grid-row: 12/13;
+    grid-column: 3/6;
+    z-index: 2;
+}
