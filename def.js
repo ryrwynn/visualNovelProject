@@ -1,5 +1,6 @@
 const gameScreen = document.querySelector("#game-screen");
-const styleSheet = document.querySelector("#style2").sheet;
+
+const style = document.createElement("style");
 
 const leftSprite = document.querySelector("#left-sprite");
 const centerSprite = document.querySelector("#center-sprite");
@@ -13,59 +14,19 @@ const dialogueP = document.querySelector("#dialogue-p");
 const dialogueBtn = document.querySelector("#dialogue-btn");
 const dialogueSpeaker = document.querySelector("#dialogue-speaker");
 
-// let style = document.styleSheets[0];
-
-// if possible transitions between time period
-
-/* coding todo list:
-[] character item: 
-    [x] name
-    [] text color - do the css
-[x] sprite item:
-    [x] image
-    [x] functions:
-        [x] show in (right-center-left)
-        [x] hide (right-center-left)
-        [x] hideAll
-[x] scene item:
-    [x] (not in constructor) dialogue array of dialogue items
-        [x] when dialogue array ends go to next scene
-    [x] link to next scene item
-    [x] functions:
-        [x] add menu item
-        [x] add dialogue item
-[x] dialogue item:
-    [x] text
-    [x] character item speaking
-[x] menu item:
-    [x] two choices
-    [x] on click of those choices lead to a different scene item
-    - when a menu option is up background is greyed out and nothing else on game screen can be clicked(set z-index high)
-    [x] function:
-        [x] when clicked go to linked dialogue item
-
-[x] scene node element(should be in grid format):
-    [x] dialogue box
-    [x] next button
-    [x] grid of sprite options
-*/
-
-// character class, still need to add class to for text color
 class Character {
     /**
      * constructor for a character
-     * @param {*} name name as appears in dialogue box, can be different from object name
-     * @param {*} textColor the color of text of the dialogue box when that character is speaking
+     * @param {Text} name name as appears in dialogue box, can be different from object name
+     * @param {Text} textColor the color of text of the dialogue box when that character is speaking
      */
     constructor(name, textColor){
         this.name = name;
         this.textColor = textColor;
         // broken right now !!
-        /*
-        styleSheet.insertRule(`.${name}-text{
-            color: ${textColor}
-        }`);
-        */
+        style.innerText += `.${name}-text{
+          color: ${textColor}
+        }`;
     }
 }
 
@@ -80,7 +41,7 @@ class Sprite{
 
     /**
      * Show the sprite using spriteObject.showIn, use the name of the sprite item you want to show
-     * @param {left, center, right} direction only use left, center, right
+     * @param {String} direction only use left, center, right
      * @function shows in the direction that you input
      */
     showIn(direction){
@@ -225,6 +186,7 @@ class Scene{
         this.dialogueArray = [];
         this.currentDialogue = 0;
         this.previousDialogue;
+        this.functionArray = [];
         if(next instanceof Scene){
             this.next = next;
         }
@@ -242,28 +204,41 @@ class Scene{
     /**
      * Add another dialogue option to the end
      * @param {Dialogue} dialogue add another dialogue option to dialogue array
+     * @param {String} sprite this is the sprite, however please pass the name of the variable as a string
+     * @param {String} showHide this is whether you want to hide or show this variables
+     * @param {String} direction this is the direction the sprite will be shown in : left, center, right
      */
-    addDialogue(dialogue){
+    addDialogue(dialogue, sprite, showHide, direction){
         this.dialogueArray.push(dialogue);
+        if((sprite != undefined)&&(direction != undefined)&&(showHide == "show")){
+            this.functionArray.push(`${sprite}.showIn('${direction}')`);
+        }
+        else if((sprite != undefined)&&(direction != undefined)&&(showHide == "hide")){
+            this.functionArray.push(`${sprite}.hideIn('${direction}')`);
+        }
+        else if((sprite != undefined)&&(direction == undefined)&&(showHide == "hide")){
+            this.functionArray.push("Sprite.hideAll()");
+        }
+        else{
+            this.functionArray.push(function(){return "no function";})
+        }
     }
 
-    /**
-     * Completely redo dialogue arrays
-     * @param {Dialogue []} dialogue replace the dialogue array, add all your inputs at once
-     */
-    defineDialogue(dialogue){
-        this.dialogueArray = dialogue;
+    createDialogue(char, text, speaker, sprite, showHide, direction){
+        let d = new Dialogue(char, text, speaker);
+        this.addDialogue(d, sprite, showHide, direction);
     }
 
     /**
      * go on to next dialogue in array of the scene that is passed to it
+     * @param {Scene} scene this is the scene that the dialogue is coming from
      */
     static dialogueClicked(scene){
         scene.previousDialogue = scene.currentDialogue;
         scene.currentDialogue = scene.previousDialogue + 1;
         // if the dialogue array is still in index
-        if(scene.currentDialogue < scene.dialogueArray.length + 1){ 
-            scene.renderDialogue(scene.dialogueArray[scene.currentDialogue]);
+        if(scene.currentDialogue < scene.dialogueArray.length){ 
+            scene.renderDialogue(scene.currentDialogue);
             console.log("render dialogue");
         }
         else if (scene.menu != undefined ){
@@ -287,9 +262,11 @@ class Scene{
      * Renders the dialogue that is passed as parameter
      * @param {Dialogue} cur 
      */
-    renderDialogue(cur){
-        dialogueP.innerHTML = cur.text;
-        dialogueSpeaker.innerHTML = cur.speaker;
+    renderDialogue(index){
+        dialogueP.innerHTML = this.dialogueArray[index].text;
+        dialogueSpeaker.innerHTML = this.dialogueArray[index].speaker;
+        dialogueP.classList = `${this.dialogueArray[index].character.name}-text`;
+        eval(this.functionArray[index]);
     }
 
     /**
@@ -297,11 +274,10 @@ class Scene{
      * @param {Scene} nextScene 
      */
     static setScene(nextScene){
-        console.log(nextScene);
         this.previousScene = this.currentScene;
         this.currentScene = nextScene;
         // every time a new scene is set change the dialogue clicked to the new scene dialogue clicked    
-        this.currentScene.renderDialogue(this.currentScene.dialogueArray[this.currentScene.currentDialogue]); 
+        this.currentScene.renderDialogue(this.currentScene.currentDialogue); 
     }
 }
 
@@ -314,3 +290,6 @@ class Ending{
 dialogueBtn.addEventListener("click", function(event){
     Scene.dialogueClicked(Scene.currentScene);
 })
+
+// append the style with everything on it
+document.head.appendChild(style);
