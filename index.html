@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
     <head id = "head">
-        <title>Visual Novel Template</title>
+        <title>Sea of Tranquility</title>
         <link rel = "stylesheet" href = "def.css" id = "defStyle">
         <meta name="viewport" content="width=device-width">
         <meta charset="utf-8"/>
     </head>
-
+    <!--if i have time
+    [] add borer paper around choices-->
     <body>
         <div id = "game-container">
             <div id = "game-screen">
@@ -14,11 +15,15 @@
                 <div id = "center-sprite" class = "sprite"></div>
                 <div id = "right-sprite" class = "sprite"></div>
                 <div id = "menu-div" class = "invisible">
-                    <button type="button" class = "option-div" id = "choice1"></button>
-                    <button type="button" class = "option-div" id = "choice2"></button>
+                    <button type="button" class = "option-div time" id = "choice1"></button>
+                    <button type="button" class = "option-div time" id = "choice2"></button>
                 </div>
-                <p id = "dialogue-speaker"></p>
-                <button id = "dialogue-btn">
+                <p id = "dialogue-speaker" class = "time future-time"></p>
+                <div id = "dialogue-border1" class = " time dialogue-border future-time"></div>
+                <div id = "dialogue-border2" class = "time dialogue-border future-time"></div>
+                <div id = "dialogue-border3" class = "time dialogue-border future-time"></div>
+                <div id = "dialogue-back" class = "time future-time"></div>
+                <button id = "dialogue-btn" class = "time future-time">
                     <p id = "dialogue-p"></p>
                 </button>
             </div>

@@ -1,4 +1,5 @@
 const gameScreen = document.querySelector("#game-screen");
+const time = document.querySelectorAll(".time");
 
 const style = document.createElement("style");
 
@@ -13,6 +14,13 @@ const menuDiv = document.querySelector("#menu-div");
 const dialogueP = document.querySelector("#dialogue-p");
 const dialogueBtn = document.querySelector("#dialogue-btn");
 const dialogueSpeaker = document.querySelector("#dialogue-speaker");
+
+/**
+ * Rest of Todo:
+ * [] background image changer
+ * [] cg window
+ * [] sound adder?
+ */
 
 class Character {
     /**
@@ -87,6 +95,38 @@ class Sprite{
         leftSprite.style.removeProperty('background-image');
         centerSprite.style.removeProperty('background-image');
         rightSprite.style.removeProperty('background-image');
+    }
+}
+
+class Background{
+    /**
+     * Constructor for Sprite
+     * @param {String} url link to another file already in replit using "image.png"
+     * @param {String} timePeriod
+     */
+    constructor(url, timePeriod){
+        this.url = url;
+        if((timePeriod == "edwin") || (timePeriod == "olive") || (timePeriod == "future")){
+            this.timePeriod = timePeriod;
+        }
+        else if (timePeriod == "glassHotel"){
+            this.timePeriod = "glass-hotel";
+        }
+        else{
+            console.error(`${timePeriod} is not valid, it should be edwin, glassHotel, olive, or future - mind the upper cases`);
+        }
+    }
+
+    show(){
+        gameScreen.style.backgroundImage = `url("${this.url}")`;
+        // change each object with time to match time period      
+        for(let i = 0; i < time.length; i++){
+            time[i].classList.remove('edwin-time');
+            time[i].classList.remove('olive-time');
+            time[i].classList.remove('glass-hotel-time');
+            time[i].classList.remove('future-time');
+            time[i].classList.add(`${this.timePeriod}-time`);
+        }
     }
 }
 
@@ -181,12 +221,14 @@ class Scene{
      * Constructor for scene object
      * @param {Scene} next if there is no menu input a Scene object, if the scene ends in a menu input a Menu object
      * @param {Ending} end this is the ending that is unlocked when done with this scene
+     * @param {Background} background this is the background the scene(can not be changed)
      */
-    constructor(next, end){
+    constructor(next, background, end){
         this.dialogueArray = [];
         this.currentDialogue = 0;
         this.previousDialogue;
         this.functionArray = [];
+        this.background = background;
         if(next instanceof Scene){
             this.next = next;
         }
@@ -204,17 +246,30 @@ class Scene{
     /**
      * Add another dialogue option to the end
      * @param {Dialogue} dialogue add another dialogue option to dialogue array
-     * @param {String} sprite this is the sprite, however please pass the name of the variable as a string
-     * @param {String} showHide this is whether you want to hide or show this variables
+     * @param {String} sprite this is the sprite, however please pass the name of the variable as a string, can optionally be an array of the order of sprite to be shown
+     * @param {String} showHide this is whether you want to hide or show this variables can optionally be an array of all the show hide, same order as the sprite array
      * @param {String} direction this is the direction the sprite will be shown in : left, center, right
      */
     addDialogue(dialogue, sprite, showHide, direction){
         this.dialogueArray.push(dialogue);
-        if((sprite != undefined)&&(direction != undefined)&&(showHide == "show")){
-            this.functionArray.push(`${sprite}.showIn('${direction}')`);
+        if((sprite instanceof Array) && (showHide instanceof Array)){
+            if(sprite.length == 1){
+                this.functionArray.push(`${sprite[0]}.${showHide[0]}In('${direction}')`);
+            }
+
+            else if (sprite.length == 2){
+                this.functionArray.push(`${sprite[0]}.${showHide[0]}In('left');
+                ${sprite[1]}.${showHide[1]}In('center');`);
+            }
+
+            else if (sprite.length == 3){
+                this.functionArray.push(`${sprite[0]}.${showHide[0]}In('left');
+                ${sprite[1]}.${showHide[1]}In('center');
+                ${sprite[2]}.${showHide[2]}In('center');`);
+            }
         }
-        else if((sprite != undefined)&&(direction != undefined)&&(showHide == "hide")){
-            this.functionArray.push(`${sprite}.hideIn('${direction}')`);
+        else if((sprite != undefined)&&(direction != undefined)){
+            this.functionArray.push(`${sprite}.${showHide}In('${direction}')`);
         }
         else if((sprite != undefined)&&(direction == undefined)&&(showHide == "hide")){
             this.functionArray.push("Sprite.hideAll()");
@@ -276,6 +331,7 @@ class Scene{
     static setScene(nextScene){
         this.previousScene = this.currentScene;
         this.currentScene = nextScene;
+        this.currentScene.background.show();
         // every time a new scene is set change the dialogue clicked to the new scene dialogue clicked    
         this.currentScene.renderDialogue(this.currentScene.currentDialogue); 
     }
@@ -293,3 +349,4 @@ dialogueBtn.addEventListener("click", function(event){
 
 // append the style with everything on it
 document.head.appendChild(style);
+
