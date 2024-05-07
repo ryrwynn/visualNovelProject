@@ -1,0 +1,86 @@
+:root{
+    --dark-color: rgb(92, 34, 14);
+    --light-color: rgb(153, 88, 42);
+    --highlight-color: rgb(255, 226, 206);
+    --inside-color: rgba(32, 32, 32, 0.61);
+}
+
+path{
+    fill: var(--dark-color);
+}
+
+polygon{
+    fill: rgba(187, 187, 187, 0.8);
+}
+
+body{
+    margin: 0;
+    background-color: var(--light-color);
+}
+
+h1{
+    margin: 0;
+    margin-left: 4vw;
+    color: var(--highlight-color);
+    font-size: 2.3vw;
+}
+
+button{
+    margin: 0;
+    margin-right: 4vw;
+    width: 3vw;
+    height: 3vw;
+    border-radius: 10px;
+    background-color: var(--highlight-color);
+    border: none;
+    cursor: pointer;
+}
+
+#cg-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2vw;
+    margin: 15px 5em;
+}
+
+.invisible{
+    display:none;
+}
+
+.cgImages{
+    --inside-color: rgba(0,0,0,0);
+    width: 100%;
+    height: 100%;
+    min-height: 18vw;
+    border: 5px solid var(--dark-color);
+    border-radius: 10px;
+    background-image: url("cgImages/lock.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-color: rgba(179, 179, 179, 0.688);
+    box-shadow: inset -5px -5px 100px var(--inside-color), inset 5px 5px 100px var(--inside-color);
+}
+
+.cgImages:hover{
+    border-color: var(--highlight-color);
+    cursor: pointer;
+}
+
+.unlocked:hover{
+    --inside-color: white;
+}
+
+.unlocked{
+    --inside-color: black;
+}
+
+#gallery-div{
+    background-color: var(--dark-color);
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
