@@ -55,7 +55,7 @@ button{
     min-height: 18vw;
     border: 5px solid var(--dark-color);
     border-radius: 10px;
-    background-image: url("cgImages/lock.png");
+    background-image: url("lock.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
