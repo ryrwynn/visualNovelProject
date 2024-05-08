@@ -15,6 +15,20 @@ const dialogueP = document.querySelector("#dialogue-p");
 const dialogueBtn = document.querySelector("#dialogue-btn");
 const dialogueSpeaker = document.querySelector("#dialogue-speaker");
 
+let unlockedEndings = []
+let unlockedImages = [];
+const unlockedFromStorage = JSON.parse(localStorage.getItem("unlocked"));
+const unlockedImagesFromStorage = JSON.parse(localStorage.getItem("unlockedImages"));
+
+// load previous links from local storage
+if(unlockedFromStorage){
+    unlockedEndings = unlockedFromStorage;
+}
+
+if(unlockedImagesFromStorage){
+    unlockedImages = unlockedImagesFromStorage;
+}
+
 /**
  * Rest of Todo:
  * [] background image changer
@@ -219,11 +233,10 @@ class Scene{
     static previousScene;
     /**
      * Constructor for scene object
-     * @param {Scene} next if there is no menu input a Scene object, if the scene ends in a menu input a Menu object
-     * @param {Ending} end this is the ending that is unlocked when done with this scene
+     * @param {Scene} next if there is no menu input a Scene object, if the scene ends in a menu input a Menu object, or if it is end input a Ending object
      * @param {Background} background this is the background the scene(can not be changed)
      */
-    constructor(next, background, end){
+    constructor(next, background){
         this.dialogueArray = [];
         this.currentDialogue = 0;
         this.previousDialogue;
@@ -235,8 +248,8 @@ class Scene{
         else if(next instanceof Menu){
             this.menu = next;
         }
-        else if(next == "end"){
-            this.ending = end;
+        else if(next instanceof Ending){
+            this.ending = next;
         }
         else {
             console.log("need to input either an Scene object or a Menu object to the constructor");
@@ -279,6 +292,15 @@ class Scene{
         }
     }
 
+    /**
+     * 
+     * @param {Character} char character for text color
+     * @param {String} text 
+     * @param {String} speaker 
+     * @param {String} sprite 
+     * @param {String} showHide 
+     * @param {String} direction 
+     */
     createDialogue(char, text, speaker, sprite, showHide, direction){
         let d = new Dialogue(char, text, speaker);
         this.addDialogue(d, sprite, showHide, direction);
@@ -305,8 +327,9 @@ class Scene{
             Scene.setScene(next);
         }
         // else if scene is a special ending
-        else if (scene.end != undefined){
-            console.log(end);
+        else if (scene.ending != undefined){
+            scene.ending.unlocked();
+            console.log(`${scene.ending.name} is unlocked`)
         }
         else{
             console.error(`did not define a menu or a next scene in ${scene}`);
@@ -339,7 +362,24 @@ class Scene{
 
 //placeholder
 class Ending{
+    /**
+     * Constructor for ending
+     * @param {String} name this is the name of the ending
+     * @param {String} url this is the url for the cg image
+     */
+    constructor(name, url){
+        this.name = name;
+        this.url = url;
+    }
 
+    unlocked(){
+        // add input value to list of endings
+        unlockedEndings.push(this.name);
+        // save myLeads array to local storage
+        localStorage.setItem("unlocked", JSON.stringify(unlockedEndings));
+        unlockedImages.push(this.url);
+        localStorage.setItem("unlockedImages",JSON.stringify(unlockedImages));
+    }
 }
 
 // add the event listener to the dialogue button
@@ -349,4 +389,3 @@ dialogueBtn.addEventListener("click", function(event){
 
 // append the style with everything on it
 document.head.appendChild(style);
-
