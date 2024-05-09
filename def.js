@@ -28,7 +28,6 @@ if(unlockedFromStorage){
 if(unlockedImagesFromStorage){
     unlockedImages = unlockedImagesFromStorage;
 }
-
 /**
  * Rest of Todo:
  * [] background image changer
@@ -233,10 +232,12 @@ class Scene{
     static previousScene;
     /**
      * Constructor for scene object
+     *@param {String} name;
      * @param {Scene} next if there is no menu input a Scene object, if the scene ends in a menu input a Menu object, or if it is end input a Ending object
      * @param {Background} background this is the background the scene(can not be changed)
      */
-    constructor(next, background){
+    constructor(name, next, background){
+        this.name = name;
         this.dialogueArray = [];
         this.currentDialogue = 0;
         this.previousDialogue;
@@ -356,6 +357,7 @@ class Scene{
         this.currentScene = nextScene;
         this.currentScene.background.show();
         Sprite.hideAll();
+        localStorage.setItem("currentScene", nextScene.name);
         // every time a new scene is set change the dialogue clicked to the new scene dialogue clicked    
         this.currentScene.renderDialogue(this.currentScene.currentDialogue); 
     }
@@ -374,12 +376,13 @@ class Ending{
     }
 
     unlocked(){
-        // add input value to list of endings
-        unlockedEndings.push(this.name);
-        // save myLeads array to local storage
-        localStorage.setItem("unlocked", JSON.stringify(unlockedEndings));
-        unlockedImages.push(this.url);
-        localStorage.setItem("unlockedImages",JSON.stringify(unlockedImages));
+        if(!(unlockedEndings.includes(this.name))){
+            unlockedEndings.push(this.name);
+            // save myLeads array to local storage
+            localStorage.setItem("unlocked", JSON.stringify(unlockedEndings));
+            unlockedImages.push(this.url);
+            localStorage.setItem("unlockedImages",JSON.stringify(unlockedImages));
+        }
     }
 
     static special(event){
@@ -409,3 +412,9 @@ dialogueBtn.addEventListener("click", function(){
 
 // append the style with everything on it
 document.head.appendChild(style);
+
+/*const myFirstName = 'John'
+Object.keys({myFirstName})[0]
+
+// returns "myFirstName"
+*/
