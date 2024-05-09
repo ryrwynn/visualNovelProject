@@ -73,5 +73,6 @@ if(localStorage.getItem("currentScene")){
     eval(`Scene.setScene(${localStorage.getItem("currentScene")})`);
 }
 else{
+    Scene.previousScene = scene1;
     Scene.setScene(scene1);
 }

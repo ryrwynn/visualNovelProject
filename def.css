@@ -170,12 +170,11 @@ button:disabled{
     --text-color: aqua;
 }
 
-#option-btn{
-    background-color: gray;
+.btns{
+    background-color: rgba(128, 128, 128, 0.415);
     height: calc(3.75vw - 10px);
     width: calc(3.75vw - 10px);
     margin: 10px;
-    grid-row: 1/2;
     grid-column: 24/25;
     border-radius: 20px;
 }

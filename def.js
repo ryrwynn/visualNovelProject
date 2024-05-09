@@ -353,13 +353,23 @@ class Scene{
      * @param {Scene} nextScene 
      */
     static setScene(nextScene){
-        this.previousScene = this.currentScene;
-        this.currentScene = nextScene;
-        this.currentScene.background.show();
+        Scene.previousScene = Scene.currentScene;
+        Scene.currentScene = nextScene;
+        Scene.currentScene.background.show();
         Sprite.hideAll();
         localStorage.setItem("currentScene", nextScene.name);
         // every time a new scene is set change the dialogue clicked to the new scene dialogue clicked    
-        this.currentScene.renderDialogue(this.currentScene.currentDialogue); 
+        Scene.currentScene.renderDialogue(Scene.currentScene.currentDialogue); 
+    }
+
+    static backClick(){
+        Scene.previousScene.currentDialogue = 0;
+        Scene.setScene(Scene.previousScene);
+        console.log("backClick");
+    }
+
+    static reset(){
+        eval(`Scene.setScene(scene1)`);
     }
 }
 
