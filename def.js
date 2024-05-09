@@ -86,7 +86,7 @@ class Sprite{
      * @param {left, center, right} direction only use left, center, right
      * @function hides in the direction you input
      */
-    static hideIn(direction){
+    hideIn(direction){
         if(direction == "left"){
             leftSprite.style.removeProperty('background-image');
         }
@@ -324,12 +324,12 @@ class Scene{
         }
         // else if the dialogue array is through, and there is a defined next scene and there is no meu
         else if(scene.next != undefined){
-            Scene.setScene(next);
+            Scene.setScene(scene.next);
         }
         // else if scene is a special ending
         else if (scene.ending != undefined){
             scene.ending.unlocked();
-            console.log(`${scene.ending.name} is unlocked`)
+            Ending.special(scene.ending);
         }
         else{
             console.error(`did not define a menu or a next scene in ${scene}`);
@@ -355,6 +355,7 @@ class Scene{
         this.previousScene = this.currentScene;
         this.currentScene = nextScene;
         this.currentScene.background.show();
+        Sprite.hideAll();
         // every time a new scene is set change the dialogue clicked to the new scene dialogue clicked    
         this.currentScene.renderDialogue(this.currentScene.currentDialogue); 
     }
@@ -380,10 +381,29 @@ class Ending{
         unlockedImages.push(this.url);
         localStorage.setItem("unlockedImages",JSON.stringify(unlockedImages));
     }
+
+    static special(event){
+        switch(event){
+            case(glitch):
+                Sprite.hideAll();
+                for(let i = 0; i < time.length; i ++){
+                    time[i].classList.add('invisible');
+                }
+                glitchedForest.show()
+                setTimeout(setSceneAfter, 300);
+                break;
+                function setSceneAfter(){
+                    for(let i = 0; i < time.length; i ++){
+                        time[i].classList.remove('invisible');
+                    }
+                    Scene.setScene(afterGlitch1);
+                }
+        }
+    }
 }
 
 // add the event listener to the dialogue button
-dialogueBtn.addEventListener("click", function(event){
+dialogueBtn.addEventListener("click", function(){
     Scene.dialogueClicked(Scene.currentScene);
 })
 
