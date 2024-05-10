@@ -16,7 +16,7 @@ let mirella = new Character("Mirella", "darkgreen");
 
 let olive = new Character("Olive", "olive");
 let husband = new Character("Husband", "olive");
-let arretta = new Character("Arretta", "olive");
+let aretta = new Character("Aretta", "olive");t
 
 let gaspery = new Character("Gaspery", "navy");
 let zoey = new Character("Zoey", "navy");
@@ -66,14 +66,14 @@ let farm = new Background("baseImages/farm.PNG", "future");
 let oliveBasic = new Sprite("cgImages/oliveBasic.png");
 let oliveTalking = new Sprite("cgImages/oliveTalking.png");
 let oliveAnnoyed = new Sprite("cgImages/oliveAnnoyed.png");
-let arrettaSprite = new Sprite("cgImages/arretta.png");
+let arettaSprite = new Sprite("cgImages/arettaBasic.png");
 let zoeyScience = new Sprite("cgImages/zoeyScience.PNG");
 let zoeyCasual = new Sprite("cgImages/zoeyCasual.PNG");
 let gasperyLoser = new Sprite("cgImages/gasperyLoser.PNG");
 let gasperyOldSad = new Sprite("cgImages/gasperyOldSad.PNG");
 let gasperyOld = new Sprite("cgImages/gasperyOld.png");
 let ephremSprite = new Sprite("cgImages/ephrem.PNG");
-let husbandSprite = new Sprite("cgImages/husband.png");
+let husbandSprite = new Sprite("cgImages/oliveHusband.png");
 let natalieSprite = new Sprite("cgImages/Natalie.PNG");
 let burr = new Sprite("cgImages/burr.PNG");
 let femaleNpc = new Sprite("cgImages/femaleNpc.PNG");
@@ -251,12 +251,12 @@ right2.createDialogue(olive, "Hey are you okay, you're turning pale", "Olive", "
 right2.createDialogue(gaspery, "If a time traveler appeared before you and told you to drop everything and go home immediately, would you do it?*");
 right2.createDialogue(olive, "How would I know you were a time traveler.*");
 right2.createDialogue(gaspery, "Well for example, suppose this person were an adult. Now suppose this person, this adult in his thirties, had a name you'd made up for a book that you only published five years ago.");
-right2.createDialogue(arretta, "How's it going in here?", "Aretta","arettaSprite", "show", "center");
+right2.createDialogue(aretta, "How's it going in here?", "Aretta","arettaSprite", "show", "center");
 right2.createDialogue(gaspery, "Perfect!");
 right2.createDialogue(olive, "You could've change your name..");
 right2.createDialogue(gaspery, "I could have, but I haven't.");
 right2.createDialogue(olive, "I'm heading home.", "Olive", "gasperySuitAwkward", "hide", "right");
-right2.createDialogue(arretta, "But your tour-");
+right2.createDialogue(aretta, "But your tour-");
 
 let wrong2a = new Scene("wrong2a", alcoholic, hotelFuture);
 wrong2a.createDialogue(gaspery, "<i>I quit the Time Institute after that.</i>", "Gaspery", "gasperyLoser", "show", "center");
@@ -444,8 +444,8 @@ let scene4b = new Scene("scene4b", scene1c, bookstore);
 scene4b.createDialogue(olive, "*sigh <i>I feel like I've been signing books for so many endless hours. The line's tapering off, but a couple people just keep appearing every couple minutes.</i>", "Olive", "oliveBasic", "show", "left");
 scene4b.createDialogue(generic, "Your husband must be so kind to look after your daughter while you’re away!", "Woman", "femaleNpc", "show", "right");
 scene4b.createDialogue(olive, "Sorry, I must have misheard you. I thought you said he was kind to care for his own child.*", "Olive", "oliveAnnoyed", "show", "left");
-scene4b.createDialogue(arretta, "Right! Olive, this is Gaspery-Jacques Roberts. He’s here with a magazine for an interview.", "Arretta", "arrettaSprite", "show", "center");
-scene4b.createDialogue(olive, "<i>Arreta my savior. Never have I loved a publisher so much.</i>", "Olive", "arrettaSprite", "hide", "center");
+scene4b.createDialogue(aretta, "Right! Olive, this is Gaspery-Jacques Roberts. He’s here with a magazine for an interview.", "Aretta", "arettaSprite", "show", "center");
+scene4b.createDialogue(olive, "<i>Arreta my savior. Never have I loved a publisher so much.</i>", "Olive", "arettaSprite", "hide", "center");
 scene4b.createDialogue(olive, "Oh!", "Olive", "oliveBasic", "show", "left");
 scene4b.createDialogue(gaspery, "It’s my pleasure.","Gaspery","gasperySuitSmile", "show", "right");
 scene4b.createDialogue(olive, "What a coincidence! I always thought I made up the name Gaspery-Jacques. I’ve never seen it outside my novel.", "Olive", "oliveTalking", "show", "left");
