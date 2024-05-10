@@ -428,6 +428,12 @@ class Ending{
             case(overpass):
                 Scene.setScene(afterFlashback);
                 break;
+            case(trueEd):
+                Sprite.hideAll();
+                for(let i = 0; i < time.length; i ++){
+                    time[i].classList.add('invisible');
+                }
+                end.show();
         }
     }
 }

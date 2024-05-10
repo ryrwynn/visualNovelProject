@@ -131,7 +131,7 @@ button:disabled{
     margin-left: 3.75vw;
     margin-right: 3.75vw;
     margin-top: 0;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     text-align: left;
     grid-row: 13/17;
     line-height: 2vw;
@@ -139,7 +139,7 @@ button:disabled{
 
 #dialogue-speaker{
     margin: 0;
-    font-size: 2.25vw;
+    font-size: 2vw;
     grid-row: 13/14;
     grid-column: 3/6;
     z-index: 2;
@@ -147,7 +147,7 @@ button:disabled{
 }
 
 .edwin-time{
-    --background-img: url("baseImages/parchment.png");
+    --background-img: url("baseImages/parchment.jpg");
     --border-color: rgba(153, 88, 42, 80%);
     --text-color: rgb(92, 34, 14);
 }
@@ -165,9 +165,9 @@ button:disabled{
 }
 
 .future-time{
-    --background-img: url("baseImages/future.png");
-    --border-color: rgba(0,0,0,0);
-    --text-color: aqua;
+    --background-img: url("baseImages/future.jpg");
+    --border-color: rgb(113, 145, 162);
+    --text-color: rgb(58, 101, 126);
 }
 
 .btns{

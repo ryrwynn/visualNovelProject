@@ -44,7 +44,6 @@ let gasperyBloodTalking = new Sprite("cgImages/gasperyBloodTalking.png");
 
 let hotelRoom = new Background("baseImages/hotel.png", "olive");
 let airport = new Background("baseImages/airport.png", "olive");
-let nightCityNew = new Background("baseImages/nightCityNew.png", "olive");
 let nightCityOld = new Background("baseImages/nightCityOld", "future");
 let office = new Background("baseImages/office.png", "future");
 let parkOlive = new Background("baseImages/park.png", "olive");
@@ -52,6 +51,9 @@ let lectureHall = new Background("baseImages/lectureHall.png", "olive");
 let airportSunset = new Background("baseImages;airportSunset.png", "olive");
 let bookstore = new Background("baseImages/bookstore.png", "olive");
 let hotelFuture = new Background("baseImages/hotel.png", "future");
+let vincentForest = new Background("baseImages/forest.png", "glassHotel");
+let prison = new Background("baseImage/prison.png", "glassHotel");
+let farm = new Background("baseImages/farm.png", "future");
 
 let olive = new Character("Olive", "olive");
 let zoey = new Character("Zoey", "Navy");
@@ -67,6 +69,7 @@ let arrettaSprite = new Sprite("cgImages/arretta.png");
 let zoeyScience = new Sprite("cgImages/zoeyScience.png");
 let zoeyCasual = new Sprite("cgImages/zoeyCasual.png");
 let gasperyLoser = new Sprite("cgImages/gasperyLoser.png");
+let gasperyOldSad = new Sprite("cgImages/gasperyOldSad.png");
 let gasperyOld = new Sprite("cgImages/gasperyOld.png");
 let ephremSprite = new Sprite("cgImages/ephrem.png");
 let husbandSprite = new Sprite("cgImages/husband.png");
@@ -76,12 +79,284 @@ let femaleNpc = new Sprite("cgImages/femaleNpc");
 let gasperySuitAwkward = new Sprite("cgImages/gasperySuitAwkward.png");
 let gasperySuitSmile = new Sprite("cgImages/gasperySuitSmile.png");
 let gasperySuitTalking = new Sprite("cgImages/gasperySuitTalking.png");
+let gasperySuitSad = new Sprite("cgImages/gasperySuitSad.png")
+let vincentChild = new Sprite("cgImages/vincentChild.png");
+let edwinOld = new Sprite("cgImages/edwinOld.png");
+let gasperyPrisonSad = new Sprite("cgImages/gasperyPrisonSad.png");
+let hazeltonSprite = new Sprite("cgImages/hazelton.png");
+let gasperyPrisonSmile = new Sprite("cgImages/gasperyPrisonSmile.png");
+
+let end = new Background("baseImage/end.png", "future");
 
 let glitch = new Ending("First Glitch", "glitch1.png");
 let glitch2 = new Ending("Second Glitch", "glitch2.png");
 let overpass = new Ending("The Underpass", "underpass.png");
+let stagnation = new Ending("Stagnation", "stagnation.png");
+let alcoholic = new Ending("Dimming Stars", "dim.png");
+let prisonSad = new Ending("Get Out", "getOut.png");
+let trueEd = new Ending("Sea of Tranquility", "trueEd.png");
 
-let scene6c = new Scene("scene6c", "", office);
+let right3d = new Scene("right3d", trueEd, airport);
+right3d.createDialogue(gaspery, "<i>I sit cross legged on the ground of the Oklahoma City airship terminal, playing songs Talia had taught me and a lullaby I had written for her.</i>", "Gaspery", "gasperyOld", "show", "center");
+right3d.createDialogue(gaspery, "<i>At some point, it happened. There was Olive Llewellyn, on her way to an interview. A young man, anxious and flighty, had just stepped out of a broom closet. The warp in the fabric of the world intensified, rippling in the same way it already had a hundred times--</i>", "Gaspery", "gasperySuitSmile","show", "right");
+right3d.createDialogue(gaspery, "<i>--lilting notes on my violin as I desperately clung to Talia’s lullaby, bittersweet and beautiful, the deafening whoosh of an airship falling into the sky, the afternoon sun penetrating through, setting green leaves aglow--</i>", "Gaspery", "gasperySuitSmile", "hide","right");
+right3d.createDialogue(gaspery, "<i>--as I from the present met my younger self from the future, another Gaspery somewhere else in the timeline existed, by the tree in 1912, 1994, Edwin, Vincent--</i>");
+right3d.createDialogue(gaspery, "<i>The man from the utility closet had neared me.</i>", "Gaspery", "gasperySuitSmile", "show", "left");
+right3d.createDialogue(gaspery, "Excuse me, Alan Sami? I’m conducting research for a music historian and I was wondering if you’d let me buy you lunch.");
+right3d.createDialogue(gaspery, "<i>It was me, with my notably discordant accent.</i>", "Alan Sami");
+right3d.createDialogue(gaspery, "Alright, son.", "Alan Sami");
+right3d.createDialogue(gaspery, "<i>I would keep him off balance. I would quote Shakespear at him him because I knew he didn't know his Shakespeare yet. I would all him son because he hates being called son, and his irritation would distract him.*</i>", "Alan Sami");
+right3d.createDialogue(gaspery, "<i>In the end, no one had noticed that I was the one who had caused the anomaly. My existence in multiple points of time had nicked the fabric of the world, and now that I had met myself again, the stray thread tucked itself back in.</i>", "Alan Sami");
+right3d.createDialogue(gaspery, "Why did you decide to collect money playing the violin here?");
+right3d.createDialogue(gaspery, "I wasn’t playing for money at all, people would just throw it at me. I figured if I put my hat upside down there, at least all of it’d land in the same place.” He fidgets and doesn’t seem to be truly listening.", "Alan Sami");
+right3d.createDialogue(gaspery, "Would you mind telling me what you do when you’re not playing the violin?");
+right3d.createDialogue(gaspery,"Well, I walk my dog around the city. It’s always busy here, I suppose that’s a delight. Me and Odio, we stand like tired stones in a riverbed. Everywhere, people move around us, so fast, going so far.", "Alan Sami");
+right3d.createDialogue(gaspery, "Thank you for talking with me", "Gaspery", "gasperySuitSmile", "hide", "left");
+right3d.createDialogue(gaspery, "<i>But they don’t know that I’ve already traveled so, so far, and that I wish to move no further.</i>", "Gaspery");
+
+let right3c = new Scene("right3c", right3d, farm);
+right3c.createDialogue(gaspery, "<i>Amber sun washes over the wooden walls of an old-fashioned style room, painting the room in a sepia veil. It feels as I’ve been transported into a different time, and I suspect I have, but not into the past.</i>", "Gaspery", "gasperyPrisonSmile", "show", "right");
+right3c.createDialogue(zoey, "I’ve taken you to the year 2172. You should settle down and, you know, maybe get to know the neighbors.", "Zoey", "zoeyCasual", "show", "left");
+right3c.createDialogue(gaspery, "Zoey… But, how? I mean, thank you.");
+right3c.createDialogue(gaspery, "<i>But instead she embraces me, for the first time maybe since we were kids, and for the last time in my life.</i>");
+right3c.createDialogue(zoey, "I don’t know if I’ll see you again.");
+right3c.createDialogue(gaspery, "<i>And she vanishes, leaving me here bleeding and bewildered.</i>", "Gaspery", "zoeyCasual", "hide", "left");
+right3c.createDialogue(gaspery, "<i>Zoey payed the owners of the house a grand enough sum to allow me to continue to live my life out here. It was a farm, owned by an elderly couple who eagerly helped me with all my needs.</i>", "Gaspery", "gasperyCasualSmile", "show", "left");
+right3c.createDialogue(gaspery, "In time, my health improves. New technology had healed my heart, and they had even found me a plastic surgeon to change my face to fit my new, forged identity on paper.");
+right3c.createDialogue(gaspery, "It was a new face, and a familiar one.*");
+right3c.createDialogue(gaspery, "I picked up some new hobbies as well. The old couple gifted me a violin and offered me violin lessons with one of our neighbors, Lina.");
+right3c.createDialogue(gaspery, "That day we drove over to her house, I realized why Zoey had suggested I meet my neighbors.");
+right3c.createDialogue(natalie, "Hello, Gaspery.", "Talia", "natalieSprite", "show", "right");
+right3c.createDialogue(gaspery, "<i>We spent many evenings together on the porch, between our violins.</i>");
+right3c.createDialogue(gaspery, "How did you end up here?");
+right3c.createDialogue(natalie, "Zoey came and took me away with her, to the Far Colonies. She said the Time Institute would come after me, that it wasn’t safe.", "Talia");
+right3c.createDialogue(gaspery, "<i>She had an air of peace and content about her. Tan, sunkissed skin, and a dreamy gaze that settled on the stretches of farmland around us, the chin of the dog, Odio, resting on her lap.</i>");
+right3c.createDialogue(natalie, "Something about me repeating classified information.", "Talia");
+right3c.createDialogue(gaspery, "You did do that. I had warned you, hadn’t I");
+right3c.createDialogue(gaspery,"<i>But we spoke lightly for it was all in the past. </i>");
+right3c.createDialogue(gaspery, "<i>For presently, all it is is us, the nights together on the porch, when we cook together, walk the fields with our Odio, listening to the sound of airships ascending to the moon like fireflies.</i>");
+right3c.createDialogue(gaspery, "What them, those intelligent people at the Time Institute, had failed to realize was that even if it all was a simulation, the correct response would be: <i>So what?</i>");
+right3c.createDialogue(gaspery, "<i>We were married within the year. During all of it, all of the blissful, picturesque days on the farm, I knew it was coming. I knew it, but I did not love her any less.</i>");
+right3c.createDialogue(gaspery, "<i>And one day</i>", "Gaspery", "natalieSprite", "hide", "right");
+right3c.createDialogue(gaspery, "Quietly<br>in the night<br>of an aneurysm <br>when she was seventy-five");
+right3c.createDialogue(gaspery, "I moved through the motions of our everyday life for some time afterwards, delaying my predetermined steps.", "Gaspery", "gasperyOld", "show", "center");
+right3c.createDialogue(gaspery, "The porch still glowed from the violently colored sunsets even as they slipped into deeper evening hues. Maybe it would be wrong to call it ‘predetermined’");
+right3c.createDialogue(gaspery, "I think I simply happened to glimpse the precognition of the world as it ran its computer code, now chained to the resigned agony of knowing.");
+right3c.createDialogue(gaspery, "And anyways, I had begun to miss the company of people.");
+
+let right3b = new Scene("right3b", right3c, prison);
+right3b.createDialogue(gaspery, "The Time Institute brings breakers of its rules to a different time period, frames them for a crime, and allows the government of that era to spend the money and resources on housing them.", "Gaspery", "gasperyPrisonSmile", "show", "center");
+right3b.createDialogue(gaspery, "At first, prison is a strange sensation. I feel like I am myself, five years ago, living listlessly, aimlessly.");
+right3b.createDialogue(gaspery, "I spend my days reading Shakespeare that was missing from my education previously. My bunkmate is talkative, overly so, but not bad company. He carries the aura of someone who still holds hope in the future.");
+right3b.createDialogue(gaspery, "I spent an indistinguishable day, for they blurred and bled into each other, scratching out words in the paint above my bedpost.");
+right3b.createDialogue(generic, "No stars burn forever, huh? I like that. Power of positive thinking.", "Hazelton", "hazeltonSprite", "show", "left");
+right3b.createDialogue(gaspery, "My bunkmate is talkative, overly so, but not bad company. He carries the aura of someone who still holds hope in the future. But he would have had to seen the future to know what I meant, how a whole world could fall to pieces over an illness, how his life had crumbled to dust.");
+right3b.createDialogue(generic, "You know I keep meaning to tell you this, but you know you're talking out loud right.", "Hazelton");
+right3b.createDialogue(gaspery, "WHAT.", "Gaspery", "hazeltonSprite", "hide", "left");
+right3b.createDialogue(gaspery, "Decades pass.");
+right3b.createDialogue(gaspery, "The same, grey walls. ");
+right3b.createDialogue(gaspery, "<br>I am diagnosed with some heart trouble, I’m not quite sure what, but the kind that is deadly in this time period. They’ve moved me to the hospital wing of the prison facility and my view is white walls, white cloaks moving about me, and needles.");
+right3b.createDialogue(gaspery, "A knife slits the thin skin over my wrist one day and--");
+right3b.createDialogue(gaspery, "I need you to work with me here--", "Zoey", "zoeyCasual", "show", "left");
+right3b.createDialogue(gaspery, "<i>She removes the tracker in my wrist, places a new tracker under my tongue, and presses a familiar device into my hand--</i>");
+
+
+let right3a = new Scene("right3a", right3b, ohioOverpass);
+right3a.createDialogue(gaspery, "<i>And I finally arrive in my final destination. Where I was always going to end up. 2000 Ohio.</i>", "Gaspery", "gasperySuitSmile", "show", "center");
+right3b.createDialogue(zoey, "Gaspery...", "Zoey", "zoeyCasual", "show", "left");
+right3b.createDialogue(ephrem, "I’m sure you know what procedure calls for now Gaspery.", "Ephrem", "ephremSprite", "show", "right");
+right3b.createDialogue(gaspery, "I do.");
+right3b.createDialogue(ephrem, "Check Edwin's file, Zoey.");
+right3b.createDialogue(zoey, "…He died 48 hours later than in the original timeline, from the pandemic.");
+right3b.createDialogue(ephrem, "See, Gaspery? There was no point in disobeying the rules. He died anyways.");
+right3b.createDialogue(gaspery, "<i>He seems disappointed but apathetic. Zoey looks at me as if hope has been ripped from her soul.</i>");
+right3b.createDialogue(gaspery, "There was a point, Ephrem, you simply cannot see it. I would do it again without regrets.","Ephrem", "zoeyCasual", "hide", "left");
+right3a.createDialogue(gaspery, "<i>Something hits the back of my head and I awake to find myself holding a gun. A man dead in front of me.</i>", "Gaspery", "gasperyBloodTalking", "show", "center");
+right3a.createDialogue(gaspery, "<i>The police are here</i>", "Gaspery", "ephremSprite", "hide", "right");
+
+let right3 = new Scene("right3", right3a, edwinBedroom);
+right3.createDialogue(gaspery, "I’m here to tell you something. Do you remember what happened in the forest at Caiette?", "Gaspery", "gasperySuitSmile", "show", "right");
+right3.createDialogue(edwin, "It was just another hallucination, was it not?", "Edwin", "edwinOld", "show","left");
+right3.createDialogue(gaspery, "What you saw was real, a corruption of time, albeit I can’t really explain, but I can assure you that it was real. I’m a time traveler.");
+right3.createDialogue(gaspery, "You’re not insane, Mr. Edwin, at least not at that moment. I hope that brings you some ease.");
+right3.createDialogue(edwin, "<i>I was hesitant to believe it. He seemed crazier than me. But it did relieve me, as he said.</i>");
+right3.createDialogue(edwin, "Thank you for telling me.");
+right3.createDialogue(gaspery, "I must go now-- an errand, or, appointment I must go to.");
+right3.createDialogue(edwin, "The man walks away, through the gates, but it feels as if he has just vanished from my world through the soft rays of afternoon sun.");
+right3.createDialogue(edwin, "<br><i>I take in the world around me, the slight edge of chill on the air as the Earth’s northern hemisphere cools down into night. The garden around me erupts in color for the first time. Here, I think, now, I might eventually be satisfied.</i>");
+
+let wrong3a = new Scene("wrong3a", prisonSad, prison);
+wrong3a.createDialogue(gaspery, "The prison walls, made of rigid concrete, should have stayed the same shape. Yet everyday they encroach further in, pervading into my space and mind.", "Gaspery", "gasperyPrisonSad", "show", "center");
+wrong3a.createDialogue(gaspery, "No matter what I did, I would have ended up in prison regardless. The Time Institute showed me Edwin’s file after I returned. He had died 48 hours earlier than he did in the original timeline in a struggle over taking his medication.");
+wrong3a.createDialogue(gaspery, "I am haunted by guilt. Maybe it was he who saw ghosts, but now I am the one who sees his shadowy being in the corner of my cell, watching, always watching.");
+wrong3a.createDialogue(gaspery, "I should have done something, something to help him. I've become something less than human, and he won't forgive me for it.");
+wrong3a.createDialogue(gaspery, "Get out my mind.");
+wrong3a.createDialogue(gaspery, "Get out my mind.");
+wrong3a.createDialogue(gaspery, "Get out my mind.");
+wrong3a.createDialogue(gaspery, "Get out my mind.");
+wrong3a.createDialogue(gaspery, "Get out my mind.");
+wrong3a.createDialogue(gaspery, "GET OUT OF MY MIND.");
+
+let wrong3 = new Scene("wrong3", wrong3a, edwinBedroom);
+wrong3.createDialogue(edwin, "It can't be", "Edwin", "edwinOld", "show","left");
+wrong3.createDialogue(gaspery, "<i>I must not get distracted. I resolve to complete my investigation of the corruption and return to the Time Institute with valuable information.</i>", "Gaspery", "gasperySuitSmile", "show", "right");
+wrong3.createDialogue(gaspery, "Do you remember me? You met me at Caiette, six years ago.");
+wrong3.createDialogue(edwin, "...I- Father Roberts?");
+wrong3.createDialogue(gaspery, "Yes, Father Roberts, that’s me. Do you remember what you saw in the forest, at the maple tree back then?");
+wrong3.createDialogue(edwin, "You can’t be real. No one there knows who Father Roberts is. You arrived on a ship that didn’t <i>exist.</i>");
+wrong3.createDialogue(gaspery, "<i>Edwin’s voice raises to a labored shout. His bloodshot eyes are laced with insanity and he grabs my shoulders, his war-hardened fingers clawing into me.</i>");
+wrong3.createDialogue(edwin, "How were you in Caiette, Father Roberts? You seem so real but so impossible.");
+wrong3.createDialogue(gaspery, "I… I don’t know. There was no boat. You won’t believe me if I tell you.");
+wrong3.createDialogue(edwin, "Then I am crazy.");
+wrong3.createDialogue(gaspery, "<i> A hint of relief and resignation in his voice, as if admitting it had set him free. </i>");
+wrong3.createDialogue(gaspery, "I-I should go.");
+wrong3.createDialogue(gaspery, "<i>Rattled, I break the hold of Edwin’s deranged stare and program my watch to take me back to the Time Institute.</i>");
+wrong3.createDialogue(gaspery, "<i>The watch clicks and the still garden slips away from me, transporting me back to my time.</i>", "Gaspery", "gasperySuitSmile", "hide", "right");
+wrong3.createDialogue(edwin, "<i>I’m still reeling. The man in front of me is now gone. Behind me, the garden gate creaks open and I hear my mother’s hesitant footsteps pad on the lawn towards me.</i>");
+wrong3.createDialogue(edwinMother, "I heard shouting from inside. Are you alright, my dear?", "Mother", "edwinMotherSprite", "show", "center");
+wrong3.createDialogue(edwin, "<i>I can’t turn to face her, but my hands, outstretched, still grapple at an imaginary being.</i>");
+wrong3.createDialogue(edwinMother, "Edwin, oh… Edwin.");
+
+let menu3 = new Menu("I’m a time traveler.", right3,"Do you remember what you saw in the forest, at the maple tree back then?", wrong3);
+
+let scene2e = new Scene("scene2e", menu3, edwinBedroom);
+scene2e.createDialogue(edwin, "<i>I spend my days at my family’s estate, tending to the garden, reading in the library, and occasionally sitting down for dinners.</i>", "Edwin", "edwinOld", "show", "left");
+scene2e.createDialogue(edwin, "<i>I am something of a war hero yet a ghost. After losing my beloved, Gilbert on the war front, I have started talking to his ghost as well.</i>");
+scene2e.createDialogue(edwin, "<i>Mother and father no longer know how to regard me; they say I’ve changed. I don’t know how to answer that. Was I changed, or was I left behind on that battlefield, now an empty, dysfunctional husk?</i>");
+scene2e.createDialogue(edwin, "<i>I stay awake for as many days as I can, avoiding sleep, because when it eventually comes, it is slew of bullets and blood and death and the thunderous cacophony of war.</i>");
+scene2e.createDialogue(edwin, "<i>My brother and I sit in the garden every day for hours. With the sun on our backs and the wind weaving through the summer’s peonies, he is here again with me.,/i>");
+scene2e.createDialogue(edwin, "<i>A figure waits for me on the terrace bench one afternoon. Is it Gilbert? But when sit down beside him, an unfamiliar man faces me.</i>", "Edwin", "gasperySuitSmile", "show", "right");
+scene2e.createDialogue(edwin, "You’re not a ghost. You’re not my hallucination.");
+
+let scene1e = new Scene("scene1e", scene2e, office);
+scene1e.createDialogue(gaspery, "<i>I get sucked back to my time as soon as I leave the room</i>", "Gaspery", "gasperySuitSmile", "show", "left");
+scene1e.createDialogue(zoey, "What have you done, Gaspery...", "Zoey", "zoeyScience", "show", "right");
+scene1e.createDialogue(gaspery, "<i>Zoey’s voice shakes and she looks hopeless. A flood of guilt consumes me for a second and I’m thrown back into the old me, irresponsible and a burden.</i>", "Gaspery", "gasperySuitSad", "show", "left");
+scene1e.createDialogue(zoey, "<br>You know what the consequences are for interfering with the timeline. You’re lucky that Olive Llewellyn's survival of the pandemic didn’t have a noticeable effect on the Time Institute, but they aren’t going to let you walk away from this.");
+scene1e.createDialogue(gaspery, "<i>My sister looks broken and disbelieving and pleading.</i>");
+scene1e.createDialogue(gaspery, "There’s something else I need to check. I need to confirm something with Edwin St. Andrew, in the year 1918.");
+scene1e.createDialogue(gaspery, "1918, shortly before he is sent to the mental asylum where he dies.");
+scene1e.createDialogue(zoey, "1918? That’s six years after the glitch-- Gaspery, you can’t go now--");
+scene1e.createDialogue(gaspery, "If I can get more definitive evidence, the Time Institute might give me a more favorable sentence. Zoey, let me go, please.");
+scene1e.createDialogue(zoey, "I’m… overriding the decommissioning order on you and plugging in the coordinates. But… I can’t protect you if you come back.");
+scene1e.createDialogue(gaspery, "<i>She turns to me with a world of pain in her eyes, a silent plea for me to never return, to stay lost in time, running from the reaches of the Time Institute.</i>");
+
+let right2 = new Scene("right2", scene1e, bookstore);
+right2.createDialogue(gaspery, "This will sound silly, but my editor over at Contigencies Magazine likes me to end interviews with a fun question.*", "Gaspery", "gasperySuitAwkward", "show", "right");
+right2.createDialogue(gaspery, "So this is kind of a question about destiny. Barring some unforeseen catastrophe, assuming that our technology continues to advance, we'll probably have time travel in the next century.*");
+right2.createDialogue(olive, "Hey are you okay, you're turning pale", "Olive", "oliveBasic", "show", "left");
+right2.createDialogue(gaspery, "If a time traveler appeared before you and told you to drop everything and go home immediately, would you do it?*");
+right2.createDialogue(olive, "How would I know you were a time traveler.*");
+right2.createDialogue(gaspery, "Well for example, suppose this person were an adult. Now suppose this person, this adult in his thirties, had a name you'd made up for a book that you only published five years ago.");
+right2.createDialogue(arretta, "How's it going in here?", "Aretta","arettaSprite", "show", "center");
+right2.createDialogue(gaspery, "Perfect!");
+right2.createDialogue(olive, "You could've change your name..");
+right2.createDialogue(gaspery, "I could have, but I haven't.");
+right2.createDialogue(olive, "I'm heading home.", "Olive", "gasperySuitAwkward", "hide", "right");
+right2.createDialogue(arretta, "But your tour-");
+
+let wrong2a = new Scene("wrong2a", alcoholic, hotelFuture);
+wrong2a.createDialogue(gaspery, "<i>I quit the Time Institute after that.</i>", "Gaspery", "gasperyLoser", "show", "center");
+wrong2a.createDialogue(natalie, "You're back", "Natalie", "natalieSprite", "show", "right");
+wrong2a.createDialogue(gaspery, "I guess I did.");
+wrong2a.createDialogue(natalie, "Need a drink?");
+wrong2a.createDialogue(gaspery, "Yes, please");
+wrong2a.createDialogue(gaspery, "<i>I drink the night away, and the day after that. Eventually Natalie tries to stop me, but what can she do. I'm a grown adult, capable of making my own decisions- but I still chose to ignore Ol-</i>", "Gaspery", "natalieSprite", "show", "right");
+wrong2a.createDialogue(gaspery, "<i>And I sat in the hotel room, night after night. Zoey sends me a small stipend, maybe guilt. I don't know. But eventually when I'm 70 the checks stop.</i>");
+wrong2a.createDialogue(gaspery, "<i>Everyday when I try to go outside I'm wracked with constant sweat, a sense of panic, until I feel anemic. So I don't leave. Even when Zoey, Zoey my older sister. Even when the funeral invite comes</i>");
+wrong2a.createDialogue(gaspery, "<i>And she's gone, everyone is gone. I wished I just said something. Just once in my life</i>", "Gaspery", "gasperyOldSad", "show", "center");
+
+let wrong2 = new Scene("wrong2", wrong2a, office);
+wrong2.createDialogue(gaspery, "Yes, thank you for you're time and interview", "Gaspery", "gasperySuitSmile", "show", "center");
+wrong2.createDialogue(gaspery, "<i>I see myself say goodbye to Olive, despite knowing, <b>knowing<b> she's going to die.</i>");
+wrong2.createDialogue(zoey, "Hey. You did it.", "Zoey", "zoeyScience", "show", "left");
+wrong2.createDialogue(gaspery, "Yeah-");
+wrong2.createDialogue(zoey, "You did what was best for you.");
+
+let menu2 = new Menu("If say a time traveler appeared before you and told you to drop everything and go home immediately, would you do it?", right2, "Thank you for you're time and interview", wrong2);
+
+let scene3d = new Scene("scene3d", menu2, bookstore);
+scene3d.createDialogue(gaspery, "<i>I arrive in 2203, posing as a magazine interviewer to meet with Olive</i>", "Gaspery", "gasperySuitAwkward", "show", "right");
+scene3d.createDialogue(gaspery, "I don't mean to make you uncomfortable or put you on the sport. BUt i'm curious if you experienced something strange in the Oklahoma City Airship Terminal.*", "Gaspery", "oliveBasic", "show", "left");
+scene3d.createDialogue(olive, "I don't mind talking about this but I'm afraid I'll seem too eccentric if it makes it into the final version of the interview. Could we go off the record for a moment?*");
+scene3d.createDialogue(gaspery, "Yes");
+scene3d.createDialogue(olive, "I was in the terminal. I was walking toward my flight, and I remember I walked by a guy playing a violin. And then all of a sudden, everything went dark and I was in a forest. Just for a second-*");
+scene3d.createDialogue(gaspery, "Just like in your novel!");
+scene3d.createDialogue(gaspery, "Can you tell me anything else");
+scene3d.createDialogue(olive, "No it was just so fast, I just-");
+scene3d.createDialogue(olive, "Does it mean anything?");
+scene3d.createDialogue(gaspery, "<i>I- know my directions but. This is interview is over. I got what I came for and yet.");
+scene3d.createDialogue(gaspery, "<i>How can I, knowing she will die from the pandemic in just, just a couple days. I-</i>");
+
+let cut2 = new Scene("cut2", scene3d, office);
+cut2.createDialogue(gaspery, "<i>I immediately puke over the pristine floor of the Time Institute", "Gaspery", "gasperyPreistSmile", "show", "center");
+cut2.createDialogue(zoey, "That was so much better. I assume you say it", "Zoey", "zoeyScience", "show", "left");
+cut2.createDialogue(zoey, "Well you have one last mission to Olive to find out about the violin music, but after that you can quit.");
+cut2.createDialogue(gaspery, "<i>Just one more</i>");
+
+let cut1 = new Scene("cut1", cut2, vincentForest);
+cut1.createDialogue(gaspery, "<i>I stumble through the forest to the old growth maple tree where Edwin once stood, waiting for Vincent and her camera. The island exactly that same as it was in 1912</i>", "Gaspery", "gasperyPreistSmile", "show", "right");
+cut1.createDialogue(gaspery, "So trying to get information out of Edwin didn’t go as planned, but I’m back again, the same island.");
+cut1.createDialogue(gaspery, "<i>I sit there for hours among the fronds, wet with the rain that must have fallen in the morning. My knees ache as I wait for the glitch.</i>", "Gaspery", "gasperyPreistSmile", "hide", "right");
+cut1.createDialogue(gaspery, "<i>It is around four in the afternoon when I see her, a blue-haired teenager, eyes rimmed in black, a digital camera carefully balanced on slim fingers.</i>", "Gaspery", "vincentChild", "show", "left");
+cut1.createDialogue(gaspery, "It seems to happen in slow motion. She steers the camera to capture our surroundings, slowly, then upwards towards the spreading canopy of the tree--");
+cut1.createDialogue(gaspery, "<i>--teetering notes on a violin, haunting and beautiful, a faint whoosh so thunderous as to be felt rather than heard, all encompassing, the afternoon sun penetrating through, setting green leaves aglow--</i>");
+cut1.createDialogue(gaspery, "<i>--all at once it was the airship terminal, the maple tree, Olive Llewelynn, Edwin St. Andrew, Vincent, and me--</i>");
+cut1.createDialogue(gaspery, "<i>And then I am back.</i>", "Gaspery", "vincentChild", "hide", "left");
+cut1.createDialogue(gaspery, "<i>A wave of nausea crashes into me and I am grateful to be on my knees already, otherwise I’d have fallen and revealed myself.</i>");
+cut1.createDialogue(gaspery, "<i>Vincent is up before I, dashing away.</i>");
+cut1.createDialogue(gaspery, "<i>It feels fatalistic to know exactly how she will meet her end, many decades later, a victim of fraud, after falling from money and fortune. After falling from the hull of a ship in storm. To know it carries a certain sense of guilt.</i>");
+cut1.createDialogue(gaspery, "<i>How could anyone know it, such a miserable knowledge, and ignore it? What lack of humanity could justify it? At this moment I understand what Zoey mean when she warned me from taking the job.</i>");
+cut1.createDialogue(gaspery, "<i>When I return to the Time Institute this time around, it might be one of the last times I will step into the place and time to which I belong.</i>");
+
+let scene2d = new Scene("scene2d", cut1, office);
+scene2d.createDialogue(gaspery, "<br><i>In short, the interview went horribly. The accent I had worked so long on perfecting was seen right through. I didn’t get any information from Alan Sami, either. All he said was that the song was a lullaby he’d written for his dead wife, and that was a dead end.</i>", "Gaspery", "gasperySuitSmile", "show", "left");
+scene2d.createDialogue(zoey, "You sure screwed that up.", "Zoey", "zoeyScience", "show", "right");
+scene2d.createDialogue(gaspery, "<i>She shakes her head at me in disbelief after watching the recording I took.</i>");
+scene2d.createDialogue(zoey, "I never imagined I’d see someone do an interview that badly. You looked like an idiot. Well, hopefully you’ll do better on this next one.");
+scene2d.createDialogue(zoey, "We’re sending you to Edwin St. Andrew in 1912 and 1994 to try and capture Vincent's experience");
+
+let scene1d = new Scene("scene1d", scene2d, airport)
+scene1d.createDialogue(gaspery, "<br><i>This is my first interview, my first time traveling through time, arriving ini 2195. I’m going to do just fine. I tell myself this before I step out of the dark utility closet into the bustle of the Oklahoma City Airship Terminal.</i>", "Gaspery", "gasperySuitSmile", "show", "left");
+scene1d.createDialogue(gaspery, "<i>Light hits my eyes and forces me to readjust. The space is cavernous, a huge dome with blue tinted windows that display the sky stretched out above.</i>");
+scene1d.createDialogue(gaspery, "<i>The clear, sonorous notes of a violin pierce through the muddled noises of the airport, a tune that seems to perfectly match some rhythm in my heart, but when I try to make sense of it, it evades me. </i>");
+scene1d.createDialogue(gaspery, "<i>I locate the violin player. He’s an old man in his sixties, sitting cross-legged on the floor, with a floppy-eared dog resting its chin on his lap.</i>", "Gaspery", "gasperyOld", "show", "center");
+scene1d.createDialogue(gaspery, "Excuse me, sir. I’m conducting an interview for a music historian, and I was wondering if you’d let me interview you?");
+scene1d.createDialogue(gaspery, "<i>The old man looks up at me</i>");
+scene1d.createDialogue(gaspery, "Sure, son.", "Alan Sami");
+scene1d.createDialogue(gaspery, "<i>I hate being called son.</i>", "Gaspery", "gasperySuitAwkward", "show", "left");
+
+let right1 = new Scene("right1", scene1d, office);
+right1.createDialogue(gaspery, "That sounds perfect. Thank you, Ephrem.", "Gaspery", "gasperyLoser", "show", "center");
+right1.createDialogue(gaspery, "<br><i>And like that, five years of my life passed. I underwent intensive training the profiles of the people I’d meet, the history of those time periods, the specific syntax and grammar and accents, and so much more.</i>");
+right1.createDialogue(gaspery, "<i>But I was happy and excited to be doing something that I loved.</i>", "Gaspery", "gasperySuitSmile", "show", "center");
+right1.createDialogue(ephrem, "You’ll speak to Edwin St. Andrew, who experienced the anomaly in 1912. Then Paul Smith, the composer who wrote to the video of the anomaly. Olive Llewelynn, on her last book tour. But first, Alan Sami, the violinist in the airship terminal.", "Ephrem", "ephremSprite", "show", "left");
+right1.createDialogue(gaspery, "<i>He told me this before I began training five years ago. I pressed him for details of what happened to Zoey.</i>");
+right1.createDialogue(ephrem, "Well… I really shouldn’t be telling you this. It’s strictly classified information.");
+right1.createDialogue(ephrem, "Um, well, I heard that she fell in love with a time traveler, but they went rogue and got eliminated by Time Institute.");
+right1.createDialogue(gaspery, "Eliminated? They do that?");
+right1.createDialogue(ephrem, "Yep, they’ve got many ways of going about it, like framing you for a crime in a different timeline and leaving you there to wither.");
+right1.createDialogue(gaspery, "<i>Ephrem leaves as I rub my arm where they implanted the tracker</i>", "Gaspery", "ephremSprite", "hide", "left");
+right1.createDialogue(gaspery, "<br><i>As I’m about to embark on my first mission to interview Alan Sami in the airship terminal, Zoey shows me the controls for the time travel device and the tracker.</i>", "Gaspery", "zoeyScience", "show", "right");
+right1.createDialogue(zoey, "It’s how we keep track of where you go. And how we can forcibly call you back, too.");
+right1.createDialogue(zoey, "... Good luck.");
+right1.createDialogue(gaspery, "She squeezes my hand and I step into the time travel chamber.");
+
+let wrong1a = new Scene("wrong1a", stagnation, hotelFuture);
+wrong1a.createDialogue(gaspery, "<br><i>I return to my nocturnal shifts at the hotel, sitting on my designated chair in the corner of the lobby, watching people ascend and descend from glass elevators, everyone minding their separate busy lives.</i>", "Gaspery", "gasperyLoser", "show", "center");
+wrong1a.createDialogue(gaspery, "<br><i>Many years pass. I suppose that I have spent many years sitting on this same chair as well. This chair that rocks but shouldn't, with its scuffed and stained velvet seat.</i>", "Gaspery", "gasperyOldSad", "show", "center");
+wrong1a.createDialogue(gaspery, "<br><i>It’s like watching a time-lapse video around me, solely me, who sits still and ages. I watch as Talia becomes engaged to a man who lifts her out of this sorry hotel, and I hear nothing else of her, good or bad.</i>");
+wrong1a.createDialogue(gaspery, "<br><i>The feeling of stagnance pervades me as the decades roll on. I can’t imagine anything different from this life, though. Could I have changed anything? Were there opportunities, or was I always destined for nothing?</i>");
+
+let wrong1 = new Scene("wrong1", wrong1a, office);
+wrong1.createDialogue(gaspery, "<i>I look at Zoey, and her eyes implore me to listen to her.</i>", "Gaspery", "zoeyScience", "show", "left");
+wrong1.createDialogue(gaspery, "<i>It seems she knows more than I do. She is my older sister, after all, and I trust her more than anyone.</i>", "Gaspery", "gasperyLoser", "show", "center");
+wrong1.createDialogue(gaspery, "Actually, Ephrem, I’ll be fine. I just started working at the hotel, and I’d feel bad to quit so soon.", "Gaspery");
+wrong1.createDialogue(ephrem, "If you’re sure, then, it can’t be helped.", "Ephrem", "ephremSprite", "show", "right");
+
+let menu1 = new Menu("Actually, Ephrem, I’ll be fine.", wrong1, "That sounds perfect. Thank you, Ephrem.", right1);
+
+let scene6c = new Scene("scene6c", menu1, office);
 scene6c.createDialogue(gaspery, "<i>By some twist of fate, I run into an old school friend, Ephrem, as I make my way up the Time Institute stairs the next day.</i>", "Gaspery", "gasperyLoser", "show", "center");
 scene6c.createDialogue(gaspery, "<i>I meet him over tea in his office, and somehow Zoey catches wind of this, and they play tug-of-war with me in between.</i>","Gaspery", "ephremSprite", "show", "left");
 scene6c.createDialogue(ephrem, "<br>Look, the work we do here at the Time Institute is incredibly interesting. You’d think that because of the butterfly effect, the presence of a time-traveler would irrevocably alter the course of time, but it doesn’t.", "Ephrem", "zoeyScience", "show", "right");
@@ -321,5 +596,5 @@ if(localStorage.getItem("currentScene")){
 }
 else{
     Scene.previousScene = scene1;
-    Scene.setScene(scene2b);
+    Scene.setScene(scene1);
 }
