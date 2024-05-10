@@ -425,6 +425,9 @@ class Ending{
                     Scene.setScene(afterGlitch2);
                 }
                 break;
+            case(overpass):
+                Scene.setScene(afterFlashback);
+                break;
         }
     }
 }
