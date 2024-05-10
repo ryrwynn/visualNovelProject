@@ -369,7 +369,7 @@ scene6c.createDialogue(ephrem, "I’ll write you down for an interview and scree
 
 let scene5c = new Scene("scene5c", scene6c, hotelFuture);
 scene5c.createDialogue(gaspery, "When I left that night, Zoey knew she had not convinced me to give up. But I felt that if I let this opportunity slip, I would regret it for the rest of my life.", "Gaspery", "gasperyLoser", "show", "left");
-scene5c.createDialogue(gaspery, "<i>I see Talia the next day as we are both getting off our shifts at the hotel.</i>", "Gaspery", "natalie", "show", "right");
+scene5c.createDialogue(gaspery, "<i>I see Talia the next day as we are both getting off our shifts at the hotel.</i>", "Gaspery", "natalieSprite", "show", "right");
 scene5c.createDialogue(natalie, "You want to work at the Time Institute? You should be careful. They’ll use you and dispose of you, just like trash.", "Talia");
 scene5c.createDialogue(natalie, "...My parents used to work there. Until a mission went horribly wrong and then suddenly we were living in a ramshackle house in a rundown neighborhood.", "Talia");
 scene5c.createDialogue(gaspery, "<i>The things she tells me feel like they should be strictly classified. Her voice is bitter and her memories of the Night City are different than mine. I am reminded that she had been born in a wealthier Moon colony.</i>");
