@@ -40,7 +40,7 @@ button{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 2vw;
+    gap: 1vw;
     margin: 15px 5em;
 }
 
@@ -61,6 +61,7 @@ button{
     background-size: contain;
     background-color: rgba(179, 179, 179, 0.688);
     box-shadow: inset -5px -5px 100px var(--inside-color), inset 5px 5px 100px var(--inside-color);
+    margin: 0;
 }
 
 .cgImages:hover{
@@ -84,3 +85,18 @@ button{
     justify-content: space-between;
 }
 
+#fullScreen{
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--light-color);
+}
+
+#x{
+    z-index: 10;
+}

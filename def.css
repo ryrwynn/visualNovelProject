@@ -171,7 +171,7 @@ button:disabled{
 }
 
 .btns{
-    background-color: rgba(128, 128, 128, 0.415);
+    background-color: rgba(128, 128, 128, 0.832);
     height: calc(3.75vw - 10px);
     width: calc(3.75vw - 10px);
     margin: 10px;

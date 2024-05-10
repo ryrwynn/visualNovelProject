@@ -358,6 +358,7 @@ class Scene{
         Scene.currentScene.background.show();
         Sprite.hideAll();
         localStorage.setItem("currentScene", nextScene.name);
+        Scene.currentScene.currentDialogue = 0;
         // every time a new scene is set change the dialogue clicked to the new scene dialogue clicked    
         Scene.currentScene.renderDialogue(Scene.currentScene.currentDialogue); 
     }
@@ -365,7 +366,6 @@ class Scene{
     static backClick(){
         Scene.previousScene.currentDialogue = 0;
         Scene.setScene(Scene.previousScene);
-        console.log("backClick");
     }
 
     static reset(){
@@ -403,14 +403,28 @@ class Ending{
                     time[i].classList.add('invisible');
                 }
                 glitchedForest.show()
-                setTimeout(setSceneAfter, 300);
-                break;
-                function setSceneAfter(){
+                setTimeout(set1, 300);
+                function set1(){
                     for(let i = 0; i < time.length; i ++){
                         time[i].classList.remove('invisible');
                     }
                     Scene.setScene(afterGlitch1);
                 }
+                break;
+            case(glitch2):
+                Sprite.hideAll();
+                for(let i = 0; i < time.length; i ++){
+                    time[i].classList.add('invisible');
+                }
+                concertHallGlitched.show()
+                setTimeout(set2, 1000);
+                function set2(){
+                    for(let i = 0; i < time.length; i ++){
+                        time[i].classList.remove('invisible');
+                    }
+                    Scene.setScene(afterGlitch2);
+                }
+                break;
         }
     }
 }
