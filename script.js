@@ -7,10 +7,21 @@ let glitchedForest = new Background("baseImages/forestGlitched.png", 'edwin');
 
 let generic = new Character("NPC", "grey");
 
-let edwin = new Character("Edwin", "brown");
-let edwinMother = new Character("Mother", "black");
-let edwinFather = new Character("Father", "navy");
-let gaspery = new Character("Gaspery", "olive");
+let edwin = new Character("Edwin", "#3A1A1A");
+let edwinMother = new Character("Mother", "#311212");
+let edwinFather = new Character("Father", "#572525");
+
+let paul = new Character("Paul", "#645E9D");
+let mirella = new Character("Mirella", "#392B58");
+
+let olive = new Character("Olive", "#341718");
+let husband = new Character("Husband", "#512025");
+let arretta = new Character("Arretta", "#2F3E46");
+
+let gaspery = new Character("Gaspery", "#84A98C");
+let zoey = new Character("Zoey", "#354F52");
+let natalie = new Character("Natalie", "#52796F");
+let ephrem = new Character("Ephrem", "#2F3E46");
 
 let edwinBase = new Sprite("cgImages/edwinBase.png");
 let edwinUpset = new Sprite("cgImages/edwinUpset.png");
@@ -27,9 +38,6 @@ let concertHall = new Background("baseImages/concertHall.png", "glassHotel");
 let coffeeHouse = new Background("baseImages/coffeeHouse.png" , "glassHotel");
 let park = new Background("baseImages/park.png" , "glassHotel");
 let ohioOverpass = new Background("baseImages/ohioOverpass.png" , "glassHotel");
-
-let paul = new Character("Paul", "darkgreen");
-let mirella = new Character("Mirella", "red");
 
 let paulSweaty = new Sprite("cgImages/paulSweaty.png");
 let paulBasic = new Sprite("cgImages/paulBasic.png");
@@ -54,13 +62,6 @@ let hotelFuture = new Background("baseImages/hotel.png", "future");
 let vincentForest = new Background("baseImages/forest.png", "glassHotel");
 let prison = new Background("baseImage/prison.png", "glassHotel");
 let farm = new Background("baseImages/farm.png", "future");
-
-let olive = new Character("Olive", "olive");
-let zoey = new Character("Zoey", "Navy");
-let natalie = new Character("Natalie", "brown");
-let husband = new Character("Husband", "navy");
-let arretta = new Character("Arretta", "pink");
-let ephrem = new Character("Ephrem", "green");
 
 let oliveBasic = new Sprite("cgImages/oliveBasic.png");
 let oliveTalking = new Sprite("cgImages/oliveTalking.png");
@@ -89,7 +90,7 @@ let gasperyPrisonSmile = new Sprite("cgImages/gasperyPrisonSmile.png");
 let end = new Background("baseImage/end.png", "future");
 
 let glitch = new Ending("First Glitch", "glitch1.png");
-let glitch2 = new Ending("Second Glitch", "glitch2.png");
+let glitch2 = new Ending("First Glitch", "glitch1.png");
 let overpass = new Ending("The Underpass", "underpass.png");
 let stagnation = new Ending("Stagnation", "stagnation.png");
 let alcoholic = new Ending("Dimming Stars", "dim.png");
@@ -138,7 +139,7 @@ right3c.createDialogue(gaspery, "<i>For presently, all it is is us, the nights t
 right3c.createDialogue(gaspery, "What them, those intelligent people at the Time Institute, had failed to realize was that even if it all was a simulation, the correct response would be: <i>So what?</i>");
 right3c.createDialogue(gaspery, "<i>We were married within the year. During all of it, all of the blissful, picturesque days on the farm, I knew it was coming. I knew it, but I did not love her any less.</i>");
 right3c.createDialogue(gaspery, "<i>And one day</i>", "Gaspery", "natalieSprite", "hide", "right");
-right3c.createDialogue(gaspery, "Quietly<br>in the night<br>of an aneurysm <br>when she was seventy-five");
+right3c.createDialogue(gaspery, "<br.Quietly<br>in the night<br>of an aneurysm when she was seventy-five");
 right3c.createDialogue(gaspery, "I moved through the motions of our everyday life for some time afterwards, delaying my predetermined steps.", "Gaspery", "gasperyOld", "show", "center");
 right3c.createDialogue(gaspery, "The porch still glowed from the violently colored sunsets even as they slipped into deeper evening hues. Maybe it would be wrong to call it ‘predetermined’");
 right3c.createDialogue(gaspery, "I think I simply happened to glimpse the precognition of the world as it ran its computer code, now chained to the resigned agony of knowing.");
@@ -155,7 +156,7 @@ right3b.createDialogue(generic, "You know I keep meaning to tell you this, but y
 right3b.createDialogue(gaspery, "WHAT.", "Gaspery", "hazeltonSprite", "hide", "left");
 right3b.createDialogue(gaspery, "Decades pass.");
 right3b.createDialogue(gaspery, "The same, grey walls. ");
-right3b.createDialogue(gaspery, "<br>I am diagnosed with some heart trouble, I’m not quite sure what, but the kind that is deadly in this time period. They’ve moved me to the hospital wing of the prison facility and my view is white walls, white cloaks moving about me, and needles.");
+right3b.createDialogue(gaspery, "I am diagnosed with some heart trouble, I’m not quite sure what, but the kind that is deadly in this time period. They’ve moved me to the hospital wing of the prison facility and my view is white walls, white cloaks moving about me, and needles.");
 right3b.createDialogue(gaspery, "A knife slits the thin skin over my wrist one day and--");
 right3b.createDialogue(gaspery, "I need you to work with me here--", "Zoey", "zoeyCasual", "show", "left");
 right3b.createDialogue(gaspery, "<i>She removes the tracker in my wrist, places a new tracker under my tongue, and presses a familiar device into my hand--</i>");
@@ -183,7 +184,7 @@ right3.createDialogue(edwin, "<i>I was hesitant to believe it. He seemed crazier
 right3.createDialogue(edwin, "Thank you for telling me.");
 right3.createDialogue(gaspery, "I must go now-- an errand, or, appointment I must go to.");
 right3.createDialogue(edwin, "The man walks away, through the gates, but it feels as if he has just vanished from my world through the soft rays of afternoon sun.");
-right3.createDialogue(edwin, "<br><i>I take in the world around me, the slight edge of chill on the air as the Earth’s northern hemisphere cools down into night. The garden around me erupts in color for the first time. Here, I think, now, I might eventually be satisfied.</i>");
+right3.createDialogue(edwin, "<i>I take in the world around me, the slight edge of chill on the air as the Earth’s northern hemisphere cools down into night. The garden around me erupts in color for the first time. Here, I think, now, I might eventually be satisfied.</i>");
 
 let wrong3a = new Scene("wrong3a", prisonSad, prison);
 wrong3a.createDialogue(gaspery, "The prison walls, made of rigid concrete, should have stayed the same shape. Yet everyday they encroach further in, pervading into my space and mind.", "Gaspery", "gasperyPrisonSad", "show", "center");
@@ -231,8 +232,10 @@ scene2e.createDialogue(edwin, "You’re not a ghost. You’re not my hallucinati
 let scene1e = new Scene("scene1e", scene2e, office);
 scene1e.createDialogue(gaspery, "<i>I get sucked back to my time as soon as I leave the room</i>", "Gaspery", "gasperySuitSmile", "show", "left");
 scene1e.createDialogue(zoey, "What have you done, Gaspery...", "Zoey", "zoeyScience", "show", "right");
+scene1e.createDialogue(gaspery, "What do you mean?");
+scene1e.createDialogue(zoey, "Arretta told the Institute already..");
 scene1e.createDialogue(gaspery, "<i>Zoey’s voice shakes and she looks hopeless. A flood of guilt consumes me for a second and I’m thrown back into the old me, irresponsible and a burden.</i>", "Gaspery", "gasperySuitSad", "show", "left");
-scene1e.createDialogue(zoey, "<br>You know what the consequences are for interfering with the timeline. You’re lucky that Olive Llewellyn's survival of the pandemic didn’t have a noticeable effect on the Time Institute, but they aren’t going to let you walk away from this.");
+scene1e.createDialogue(zoey, "You know what the consequences are for interfering with the timeline. You’re lucky that Olive Llewellyn's survival of the pandemic didn’t have a noticeable effect on the Time Institute, but they aren’t going to let you walk away from this.");
 scene1e.createDialogue(gaspery, "<i>My sister looks broken and disbelieving and pleading.</i>");
 scene1e.createDialogue(gaspery, "There’s something else I need to check. I need to confirm something with Edwin St. Andrew, in the year 1918.");
 scene1e.createDialogue(gaspery, "1918, shortly before he is sent to the mental asylum where he dies.");
@@ -310,14 +313,14 @@ cut1.createDialogue(gaspery, "<i>How could anyone know it, such a miserable know
 cut1.createDialogue(gaspery, "<i>When I return to the Time Institute this time around, it might be one of the last times I will step into the place and time to which I belong.</i>");
 
 let scene2d = new Scene("scene2d", cut1, office);
-scene2d.createDialogue(gaspery, "<br><i>In short, the interview went horribly. The accent I had worked so long on perfecting was seen right through. I didn’t get any information from Alan Sami, either. All he said was that the song was a lullaby he’d written for his dead wife, and that was a dead end.</i>", "Gaspery", "gasperySuitSmile", "show", "left");
+scene2d.createDialogue(gaspery, "<i>In short, the interview went horribly. The accent I had worked so long on perfecting was seen right through. I didn’t get any information from Alan Sami, either. All he said was that the song was a lullaby he’d written for his dead wife, and that was a dead end.</i>", "Gaspery", "gasperySuitSmile", "show", "left");
 scene2d.createDialogue(zoey, "You sure screwed that up.", "Zoey", "zoeyScience", "show", "right");
 scene2d.createDialogue(gaspery, "<i>She shakes her head at me in disbelief after watching the recording I took.</i>");
 scene2d.createDialogue(zoey, "I never imagined I’d see someone do an interview that badly. You looked like an idiot. Well, hopefully you’ll do better on this next one.");
 scene2d.createDialogue(zoey, "We’re sending you to Edwin St. Andrew in 1912 and 1994 to try and capture Vincent's experience");
 
 let scene1d = new Scene("scene1d", scene2d, airport)
-scene1d.createDialogue(gaspery, "<br><i>This is my first interview, my first time traveling through time, arriving ini 2195. I’m going to do just fine. I tell myself this before I step out of the dark utility closet into the bustle of the Oklahoma City Airship Terminal.</i>", "Gaspery", "gasperySuitSmile", "show", "left");
+scene1d.createDialogue(gaspery, "<i>This is my first interview, my first time traveling through time, arriving ini 2195. I’m going to do just fine. I tell myself this before I step out of the dark utility closet into the bustle of the Oklahoma City Airship Terminal.</i>", "Gaspery", "gasperySuitSmile", "show", "left");
 scene1d.createDialogue(gaspery, "<i>Light hits my eyes and forces me to readjust. The space is cavernous, a huge dome with blue tinted windows that display the sky stretched out above.</i>");
 scene1d.createDialogue(gaspery, "<i>The clear, sonorous notes of a violin pierce through the muddled noises of the airport, a tune that seems to perfectly match some rhythm in my heart, but when I try to make sense of it, it evades me. </i>");
 scene1d.createDialogue(gaspery, "<i>I locate the violin player. He’s an old man in his sixties, sitting cross-legged on the floor, with a floppy-eared dog resting its chin on his lap.</i>", "Gaspery", "gasperyOld", "show", "center");
@@ -328,7 +331,7 @@ scene1d.createDialogue(gaspery, "<i>I hate being called son.</i>", "Gaspery", "g
 
 let right1 = new Scene("right1", scene1d, office);
 right1.createDialogue(gaspery, "That sounds perfect. Thank you, Ephrem.", "Gaspery", "gasperyLoser", "show", "center");
-right1.createDialogue(gaspery, "<br><i>And like that, five years of my life passed. I underwent intensive training the profiles of the people I’d meet, the history of those time periods, the specific syntax and grammar and accents, and so much more.</i>");
+right1.createDialogue(gaspery, "<i>And like that, five years of my life passed. I underwent intensive training the profiles of the people I’d meet, the history of those time periods, the specific syntax and grammar and accents, and so much more.</i>");
 right1.createDialogue(gaspery, "<i>But I was happy and excited to be doing something that I loved.</i>", "Gaspery", "gasperySuitSmile", "show", "center");
 right1.createDialogue(ephrem, "You’ll speak to Edwin St. Andrew, who experienced the anomaly in 1912. Then Paul Smith, the composer who wrote to the video of the anomaly. Olive Llewelynn, on her last book tour. But first, Alan Sami, the violinist in the airship terminal.", "Ephrem", "ephremSprite", "show", "left");
 right1.createDialogue(gaspery, "<i>He told me this before I began training five years ago. I pressed him for details of what happened to Zoey.</i>");
@@ -337,16 +340,16 @@ right1.createDialogue(ephrem, "Um, well, I heard that she fell in love with a ti
 right1.createDialogue(gaspery, "Eliminated? They do that?");
 right1.createDialogue(ephrem, "Yep, they’ve got many ways of going about it, like framing you for a crime in a different timeline and leaving you there to wither.");
 right1.createDialogue(gaspery, "<i>Ephrem leaves as I rub my arm where they implanted the tracker</i>", "Gaspery", "ephremSprite", "hide", "left");
-right1.createDialogue(gaspery, "<br><i>As I’m about to embark on my first mission to interview Alan Sami in the airship terminal, Zoey shows me the controls for the time travel device and the tracker.</i>", "Gaspery", "zoeyScience", "show", "right");
+right1.createDialogue(gaspery, "<i>As I’m about to embark on my first mission to interview Alan Sami in the airship terminal, Zoey shows me the controls for the time travel device and the tracker.</i>", "Gaspery", "zoeyScience", "show", "right");
 right1.createDialogue(zoey, "It’s how we keep track of where you go. And how we can forcibly call you back, too.");
 right1.createDialogue(zoey, "... Good luck.");
 right1.createDialogue(gaspery, "She squeezes my hand and I step into the time travel chamber.");
 
 let wrong1a = new Scene("wrong1a", stagnation, hotelFuture);
-wrong1a.createDialogue(gaspery, "<br><i>I return to my nocturnal shifts at the hotel, sitting on my designated chair in the corner of the lobby, watching people ascend and descend from glass elevators, everyone minding their separate busy lives.</i>", "Gaspery", "gasperyLoser", "show", "center");
-wrong1a.createDialogue(gaspery, "<br><i>Many years pass. I suppose that I have spent many years sitting on this same chair as well. This chair that rocks but shouldn't, with its scuffed and stained velvet seat.</i>", "Gaspery", "gasperyOldSad", "show", "center");
-wrong1a.createDialogue(gaspery, "<br><i>It’s like watching a time-lapse video around me, solely me, who sits still and ages. I watch as Talia becomes engaged to a man who lifts her out of this sorry hotel, and I hear nothing else of her, good or bad.</i>");
-wrong1a.createDialogue(gaspery, "<br><i>The feeling of stagnance pervades me as the decades roll on. I can’t imagine anything different from this life, though. Could I have changed anything? Were there opportunities, or was I always destined for nothing?</i>");
+wrong1a.createDialogue(gaspery, "<i>I return to my nocturnal shifts at the hotel, sitting on my designated chair in the corner of the lobby, watching people ascend and descend from glass elevators, everyone minding their separate busy lives.</i>", "Gaspery", "gasperyLoser", "show", "center");
+wrong1a.createDialogue(gaspery, "<i>Many years pass. I suppose that I have spent many years sitting on this same chair as well. This chair that rocks but shouldn't, with its scuffed and stained velvet seat.</i>", "Gaspery", "gasperyOldSad", "show", "center");
+wrong1a.createDialogue(gaspery, "<i>It’s like watching a time-lapse video around me, solely me, who sits still and ages. I watch as Talia becomes engaged to a man who lifts her out of this sorry hotel, and I hear nothing else of her, good or bad.</i>");
+wrong1a.createDialogue(gaspery, "<i>The feeling of stagnance pervades me as the decades roll on. I can’t imagine anything different from this life, though. Could I have changed anything? Were there opportunities, or was I always destined for nothing?</i>");
 
 let wrong1 = new Scene("wrong1", wrong1a, office);
 wrong1.createDialogue(gaspery, "<i>I look at Zoey, and her eyes implore me to listen to her.</i>", "Gaspery", "zoeyScience", "show", "left");
@@ -359,7 +362,7 @@ let menu1 = new Menu("Actually, Ephrem, I’ll be fine.", wrong1, "That sounds p
 let scene6c = new Scene("scene6c", menu1, office);
 scene6c.createDialogue(gaspery, "<i>By some twist of fate, I run into an old school friend, Ephrem, as I make my way up the Time Institute stairs the next day.</i>", "Gaspery", "gasperyLoser", "show", "center");
 scene6c.createDialogue(gaspery, "<i>I meet him over tea in his office, and somehow Zoey catches wind of this, and they play tug-of-war with me in between.</i>","Gaspery", "ephremSprite", "show", "left");
-scene6c.createDialogue(ephrem, "<br>Look, the work we do here at the Time Institute is incredibly interesting. You’d think that because of the butterfly effect, the presence of a time-traveler would irrevocably alter the course of time, but it doesn’t.", "Ephrem", "zoeyScience", "show", "right");
+scene6c.createDialogue(ephrem, "Look, the work we do here at the Time Institute is incredibly interesting. You’d think that because of the butterfly effect, the presence of a time-traveler would irrevocably alter the course of time, but it doesn’t.", "Ephrem", "zoeyScience", "show", "right");
 scene6c.createDialogue(zoey, "We obviously have very different experiences with the Time Institute.");
 scene6c.createDialogue(zoey, "What I can tell you, Gaspery, is that this guy has failed to reach his recruitment goals for the past three years.");
 scene6c.createDialogue(ephrem, "I’ll write you down for an interview and screening, Gaspery. How does that sound?");
@@ -377,17 +380,17 @@ scene4c.createDialogue(gaspery, "<i>I buy a bouquet of flowers and a red velvet 
 scene4c.createDialogue(gaspery, "<i>But when the elevator brings me up to her office within the smooth concrete facade of the Time Institute building, I find Zoey in disarray.</i>", "Gaspery", "zoeyScience", "show", "right");
 scene4c.createDialogue(gaspery, "<i>She thanks me for the flowers and sets them down on the kitchen island and forgets about then within a heartbeat.</i>");
 scene4c.createDialogue(zoey, "I need you to take a look at this.");
-scene4c.createDialogue(gaspery, "<br><i>She maneuvers the holographic screen in front of her and shows it to me. It’s a passage written by Olive Llewellyn, my mother’s favorite author. It’s the book containing the minor character which my mother had named me after.</i>");
-scene4c.createDialogue(gaspery, "<br><i>It reads, “Willis had stopped in the bustle of the airport, listening to a violinist playing for spare change to forget the worries of his mind for a minute.</i>");
-scene4c.createDialogue(gaspery, "<br><i>The tune was lovely, like it carried the violinist’s memories of a countryside at dusk, and he let himself be lost in it until-- a flash of light--</i>");
-scene4c.createDialogue(gaspery, "<br><i>--a wave of motion sickness, blinding white sun, branches of a maple tree and papery green leaves spiraling around him--</i>");
-scene4c.createDialogue(gaspery, "<br><i>And then he was back. Willis thought he had lost his mind for a second.” The passage of the book ended and Gaspery looked up at Zoey. She fiddled with the holographic screen again, and showed Gaspery a video.</i>");
+scene4c.createDialogue(gaspery, "<i>She maneuvers the holographic screen in front of her and shows it to me. It’s a passage written by Olive Llewellyn, my mother’s favorite author. It’s the book containing the minor character which my mother had named me after.</i>");
+scene4c.createDialogue(gaspery, "<i>It reads, “Willis had stopped in the bustle of the airport, listening to a violinist playing for spare change to forget the worries of his mind for a minute.</i>");
+scene4c.createDialogue(gaspery, "<i>The tune was lovely, like it carried the violinist’s memories of a countryside at dusk, and he let himself be lost in it until-- a flash of light--</i>");
+scene4c.createDialogue(gaspery, "<i>--a wave of motion sickness, blinding white sun, branches of a maple tree and papery green leaves spiraling around him--</i>");
+scene4c.createDialogue(gaspery, "<i>And then he was back. Willis thought he had lost his mind for a second.” The passage of the book ended and Gaspery looked up at Zoey. She fiddled with the holographic screen again, and showed Gaspery a video.</i>");
 scene4c.createDialogue(zoey, "“The composer’s name is Paul James Smith. He was famous for composing music to accompany short video clips.");
-scene4c.createDialogue(gaspery, "<br><i>The screen erupts to life before me. The person behind the camera takes smooth, gliding steps through a lush, summery forest on Earth, all the while a violin melody plays in the background.</i>");
-scene4c.createDialogue(gaspery, "<br><i>Suddenly, the video glitches and the screen goes black and the violin notes cascade down into a cacophony of confusion and disorientation, and then it is back to normal.</i>");
+scene4c.createDialogue(gaspery, "<i>The screen erupts to life before me. The person behind the camera takes smooth, gliding steps through a lush, summery forest on Earth, all the while a violin melody plays in the background.</i>");
+scene4c.createDialogue(gaspery, "<i>Suddenly, the video glitches and the screen goes black and the violin notes cascade down into a cacophony of confusion and disorientation, and then it is back to normal.</i>");
 scene4c.createDialogue(zoey, "Now read this.");
-scene4c.createDialogue(gaspery, "<br><i>She pulls up a digital scan of a letter written in a loopy, slanted font such that I couldn’t read and she has to translate it for me with a function on her screen.</i>");
-scene4c.createDialogue(gaspery, "<br><i>I skim the letter, from a man named Edwin to his older brother, Gilbert. After pleasantries and well wishes, Edwin details a strange experience he’d had by a maple tree.</i>");
+scene4c.createDialogue(gaspery, "<i>She pulls up a digital scan of a letter written in a loopy, slanted font such that I couldn’t read and she has to translate it for me with a function on her screen.</i>");
+scene4c.createDialogue(gaspery, "<i>I skim the letter, from a man named Edwin to his older brother, Gilbert. After pleasantries and well wishes, Edwin details a strange experience he’d had by a maple tree.</i>");
 scene4c.createDialogue(gaspery, "<i>He describes the same phenomena that Olive Llewellyn's book and Paul’s video composition had captured. But, what was the significance of this?</i>");
 scene4c.createDialogue(zoey, "Think of a file corruption. What operating system do you use on your device-- Zephyr, right? Remember that bug where you’d open a text file on your phone, and you’d hear whatever music you’d been playing last? It’s something like that.");
 scene4c.createDialogue(gaspery, "You’re saying, it’s related to the simulation hypothesis right? It’s some kind of proof that the world is a simulation, a computer code that can malfunction just like anything else?");
@@ -405,23 +408,23 @@ scene4c.createDialogue(zoey, "...There’s a reason I choose not to go back in t
 let scene3c = new Scene("scene3c",scene4c, hotelFuture);
 scene3c.createDialogue(gaspery, "<i>I didn’t see Zoey again until more than a month later, after being hired as a “hotel detective” at a hotel.</i>", "Gaspery", "gasperyLoser", "show", "left");
 scene3c.createDialogue(gaspery, "<i>The woman interviewing me seems to have built a glass wall in between us as she explains the expectations for my job.,/i>");
-scene3c.createDialogue(natalie, "<br>You might not think, but we have very specific requirements for this job. Do you remember the employment screening that you were required to do? It reads that you have a very high attention.", "Natalie", "natalieSprite", "show", "right");
+scene3c.createDialogue(natalie, "You might not think, but we have very specific requirements for this job. Do you remember the employment screening that you were required to do? It reads that you have a very high attention.", "Natalie", "natalieSprite", "show", "right");
 scene3c.createDialogue(gaspery, "<i>She looks up at me through spectacles with a displaced vacancy. She seems familiar to me. What was her name, Natashia? Natalie? I can’t place it.</i>");
 scene3c.createDialogue(natalie, "Would you agree, Mr. Roberts? Can you pay attention to detail?");
 scene3c.createDialogue(gaspery, "<i>I am basically meant to be a security presence. We finish up the orientation and she dismisses me, but--</i>");
 scene3c.createDialogue(gaspery, "I know you");
 scene3c.createDialogue(gaspery, "Talia..");
 scene3c.createDialogue(natalie, "You’re from school, right? The end of the cul-de-sac.", "Talia");
-scene3c.createDialogue(gaspery, "<br><i>And so I began to work long night shifts, peaceful, watching hours in the muted glamor of the hotel, yet unfulfilled. I saw Talia walk through the lobby occasionally but never spoke with her.</i>", "Gaspery", "natalieSprite", "hide", "right");
+scene3c.createDialogue(gaspery, "<i>And so I began to work long night shifts, peaceful, watching hours in the muted glamor of the hotel, yet unfulfilled. I saw Talia walk through the lobby occasionally but never spoke with her.</i>", "Gaspery", "natalieSprite", "hide", "right");
 
 let scene2c = new Scene("scene2c", scene3c, office);
 scene2c.createDialogue(gaspery, "<i>No star burns forever.*</i>", "Gaspery", "gasperyLoser", "show", "left");
 scene2c.createDialogue(gaspery, "<i>I feel like no one really understands the idea that the literal world-—the solar system, and everyone in it—-will cease to exist someday.</i>");
 scene2c.createDialogue(gaspery, "<i>It’s not to say that the smaller losses aren’t equally as annihilating.</i>");
-scene2c.createDialogue(gaspery, "<br><i>School wasn’t my thing. By my mid thirties, my mother was dying. My older sister, Zoey, and I, were with her at her bedside constantly. In sleep, she murmured vague concepts from her work, and the simulation hypothesis.</i>");
-scene2c.createDialogue(gaspery, "<br><i>Zoey was always the brighter child, eagerly following in my mother’s footsteps. She listened to my mother’s words like music, slumped over mom’s hospital bed, head in her forearms.</i>", "Gaspery", "zoeyCasual", "show", "right");
+scene2c.createDialogue(gaspery, "<i>School wasn’t my thing. By my mid thirties, my mother was dying. My older sister, Zoey, and I, were with her at her bedside constantly. In sleep, she murmured vague concepts from her work, and the simulation hypothesis.</i>");
+scene2c.createDialogue(gaspery, "<i>Zoey was always the brighter child, eagerly following in my mother’s footsteps. She listened to my mother’s words like music, slumped over mom’s hospital bed, head in her forearms.</i>", "Gaspery", "zoeyCasual", "show", "right");
 scene2c.createDialogue(gaspery, "Do you know what that is? Can you explain it to me?");
-scene2c.createDialogue(zoey, "<br>What, the simulation hypothesis? Yeah. Basically, when you think of all the virtual reality and computer simulations we have right now, it’s simple to believe they’ll someday become advanced enough as to be indistinguishable from reality, right?");
+scene2c.createDialogue(zoey, "What, the simulation hypothesis? Yeah. Basically, when you think of all the virtual reality and computer simulations we have right now, it’s simple to believe they’ll someday become advanced enough as to be indistinguishable from reality, right?");
 scene2c.createDialogue(gaspery, "<i>She answers me readily without budging or lifting her eyelids.</i>");
 scene2c.createDialogue(zoey, "So here the catch lies: who’s to say we’re not already living in a simulation?");
 scene2c.createDialogue(gaspery, "I see");
@@ -429,8 +432,8 @@ scene2c.createDialogue(gaspery, "<i>She goes on, but it becomes background, and 
 scene2c.createDialogue(gaspery, "<i>So we lay there for some time, breathing in the reality of it, and then go about the preparations.</i>");
 
 let scene1c = new Scene("scene1c", scene2c, nightCityOld);
-scene1c.createDialogue(generic, "<br>The old, rundown neighborhood, in Moon Colony 2 of Night City, if where Gaspery spent his childhood. In the background is Olive Llewellyn’s boarded-up childhood home, where Talia’s family now resides. In the distance is the edge of the dome, littered with trash, and in the far distance, the Moon Colony One is seen in its opaque sheen.", "Narrator");
-scene1c.createDialogue(gaspery, "<br>The Night City was nicknamed for its lack of an atmosphere that otherwise would have concealed the reaches of space outside a cloak of pale blue and clouds. Whether it was during its two weeks of day, or two weeks of night, the malfunctioning dome made it so residents of Moon Colony Two could only see blackness when they looked up.", "Gaspery", "gasperyLoser", "show", "center");
+scene1c.createDialogue(generic, "The old, rundown neighborhood, in Moon Colony 2 of Night City, if where Gaspery spent his childhood. In the background is Olive Llewellyn’s boarded-up childhood home, where Talia’s family now resides. In the distance is the edge of the dome, littered with trash, and in the far distance, the Moon Colony One is seen in its opaque sheen.", "Narrator");
+scene1c.createDialogue(gaspery, "The Night City was nicknamed for its lack of an atmosphere that otherwise would have concealed the reaches of space outside a cloak of pale blue and clouds. Whether it was during its two weeks of day, or two weeks of night, the malfunctioning dome made it so residents of Moon Colony Two could only see blackness when they looked up.", "Gaspery", "gasperyLoser", "show", "center");
 scene1c.createDialogue(gaspery, "It’s not as if I didn’t love my home. It’s the place I miss the most now. I don’t yearn for Earth, a place regarded for its “realness”, as I’ve never been to it. Colony Two is my home.");
 scene1c.createDialogue(gaspery, "Across the street, was the childhood home of Olive Llewelynn, the author of my mother’s favorite book. I was eleven when I learned that my name, Gaspery-Jacques, was from a side-character from this book.");
 scene1c.createDialogue(gaspery, "The house, boarded-up in that rundown neighborhood, was home to a family with a daughter, I saw her at school every day, playing alone.");
@@ -462,7 +465,7 @@ scene2b.createDialogue(olive, "<i>I've given this lecture so much...</i>", "Oliv
 scene2b.createDialogue(olive, "<i>Earlier, with this taxi driver, I said the virus had been “fairly well contained,” but in terms of viruses, isn’t ‘fairly well contained’ the same as ‘not contained at all?’</i>", "Olive", "oliveBasic", "show", "center");
 scene2b.createDialogue(olive, "<i>It’s a binary condition. It’s either contained or it isn’t.</i>");
 scene2b.createDialogue(olive, "<i>Ugh. Focus!</i>");
-scene2b.createDialogue(olive, "<br>When Europeans had been traveling what would later be called British Columbia, they encountered a strange phenomenon. Despite the hundreds of miles of shores traveled, they would be met with empty islands, devoid of all life. When they finally found villages, they still found this to be true, because the villages had been filled with corpses. Human remains were strewn everywhere, and later, skeletons on the beach.", "Olive", "oliveTalking", "show", "center");
+scene2b.createDialogue(olive, "When Europeans had been traveling what would later be called British Columbia, they encountered a strange phenomenon. Despite the hundreds of miles of shores traveled, they would be met with empty islands, devoid of all life. When they finally found villages, they still found this to be true, because the villages had been filled with corpses. Human remains were strewn everywhere, and later, skeletons on the beach.", "Olive", "oliveTalking", "show", "center");
 scene2b.createDialogue(olive, "Smallpox had arrived");
 scene2b.createDialogue(olive, "Before the Europeans, it was the Romans who had the disease. They believed it came because of the desecration of a temple. It seems silly now, but it shows how illness has carried—still carries—a terrible mystery.");
 scene2b.createDialogue(olive, "Even now, over 500 years after smallpox in the 1700s, illness is still a kind of unknown. We don’t know why some people die sickly, or why others with the same illness recover and live long and happy lives. It feels completely random, in the cruelest of ways.");
@@ -473,15 +476,15 @@ scene1b.createDialogue(olive, "<i>I liked to take walks in between being on tour
 scene1b.createDialogue(olive, "Ow!");
 scene1b.createDialogue(olive, "<i>There's something in my shoe</i>", "olive", "burr", "show", "center");
 scene1b.createDialogue(olive, "<i>At first I thought it was biotech, but upon further investigation they turned out to be real. No, real wasn’t the word for it. Everything that can be touched is real.*</i>");
-scene1b.createDialogue(olive, "<br><i>What I saw was a symbol of another world, something so Earthlike it might as well have been screaming it from the rooftops. I packed a few of them into a sock for safe keeping</i>", "Olive", "burr", "hide", "center");
+scene1b.createDialogue(olive, "<i>What I saw was a symbol of another world, something so Earthlike it might as well have been screaming it from the rooftops. I packed a few of them into a sock for safe keeping</i>", "Olive", "burr", "hide", "center");
 
 let afterFlashback = new Scene("afterFlashback", scene1b, hotelRoom);
-afterFlashback.createDialogue(generic, "<br>Olive is a famous author, currently on tour in 2203 for her accredited book, Marienbad. She had been raised on the Moon Colonies, a fact that sometimes raised pity in others, which in turn annoyed her.", "Narrator");
-afterFlashback.createDialogue(generic, "<br>She looked forward to phone calls with her husband(an architect), but also hated them, because they reminded her of what she was missing while she was away.", "Narrator");
+afterFlashback.createDialogue(generic, "Olive is a famous author, currently on tour in 2203 for her accredited book, Marienbad. She had been raised on the Moon Colonies, a fact that sometimes raised pity in others, which in turn annoyed her.", "Narrator");
+afterFlashback.createDialogue(generic, "She looked forward to phone calls with her husband(an architect), but also hated them, because they reminded her of what she was missing while she was away.", "Narrator");
 afterFlashback.createDialogue(husband, "Have I told you about the new project I’ve been assigned?","Husband", "husbandSprite", "show", "right");
 afterFlashback.createDialogue(husband, "It's some kind of center for physics or something, but the blueprints are really weird.");
 afterFlashback.createDialogue(olive, "What kind of weird?", "Olive", "oliveBasic", "show", "left");
-afterFlashback.createDialogue(husband, "<br>There’s like, a tunnel? Connecting to our Security Headquarters. Whatever that’s for. And there’s so many passageways between this building—the physics one—and this other government building, that they’re nearly the same thing. I’m not sure what to think of it.");
+afterFlashback.createDialogue(husband, "There’s like, a tunnel? Connecting to our Security Headquarters. Whatever that’s for. And there’s so many passageways between this building—the physics one—and this other government building, that they’re nearly the same thing. I’m not sure what to think of it.");
 afterFlashback.createDialogue(olive, "Well, how’s my lovely daughter? Has Sylvie missed me too much yet?");
 afterFlashback.createDialogue(husband, "Of course she's been amazing! In fact-");
 afterFlashback.createDialogue(olive, "<i>I miss them so much. I know he's trying his best to avoid it, but I can tell she has, in fact, been missing me.</i>");
@@ -511,7 +514,7 @@ scene3a.createDialogue(mirella, "<i>I remember it vividly...</i>");
 let scene2a = new Scene("scene2a", scene3a, coffeeHouse);
 scene2a.createDialogue(gaspery, "So your sister, Vincent, she's the one who recorded those videos you used?", "Gaspery", "gasperyCasualSmile", "show", "center");
 scene2a.createDialogue(paul, "Yeah, sometime before she passed she gave me permission to, err, use them in my performances.", "Paul", "paulSweaty", "show", "left");
-scene2a.createDialogue(mirella, "<br><i>A kind of involuntary shudder seems to pass through him as he spoke. He stares right past me, his eyes blown wide, swallowing nervously, as if looking at a ghost.</i>", "Mirella", "mirellaBasic", "show", "right");
+scene2a.createDialogue(mirella, "<i>A kind of involuntary shudder seems to pass through him as he spoke. He stares right past me, his eyes blown wide, swallowing nervously, as if looking at a ghost.</i>", "Mirella", "mirellaBasic", "show", "right");
 scene2a.createDialogue(mirella,"<i>Sometime before she passed? This fu-- </i>", "Mirella", "mirellaAnnoyed", "show", "right");
 scene2a.createDialogue(mirella, "<i>Just- need to calm down. I take a deep breath and close my eyes. Thankfully Paul seems to have noticed.</i>", "Paul", "paulBasic", "show", "left");
 scene2a.createDialogue(gaspery, "There was a moment in you video, something like an anomaly. Have you ever seen anything like it in person?");
@@ -529,7 +532,7 @@ scene2a.createDialogue(mirella, "I appreciate this conversation");
 
 let afterGlitch2 = new Scene("afterGlitch2", scene2a, concertHall);
 afterGlitch2.createDialogue(generic, "Backstage, Mirella Kessler waits to talk to Paul. His half-sister, Vincent, vanished off the face of the Earth after her husband was revealed to be the head of a 20 billion dollar Ponzi scheme.", "Narrator", "mirellaBasic", "show", "right");
-afterGlitch2.createDialogue(generic, "<br>Mirella and Vincent had been close until Mirella’s husband had killed himself due to financial ruin after the scheme collapsed. Vincent had somehow turned untraceable—perhaps in an attempt to escape her old life—so Mirella had to resort to stalking her family instead. Her search had led her to Paul, who had apparently made a name for himself as an abstract composer.", "Narrator");
+afterGlitch2.createDialogue(generic, "Mirella and Vincent had been close until Mirella’s husband had killed himself due to financial ruin after the scheme collapsed. Vincent had somehow turned untraceable—perhaps in an attempt to escape her old life—so Mirella had to resort to stalking her family instead. Her search had led her to Paul, who had apparently made a name for himself as an abstract composer.", "Narrator");
 afterGlitch2.createDialogue(mirella, "<i>I look around backstage and see a middle aged man, who I guess must also been waiting for Paul.</i>", "Mirella", "gasperyCasualSmile", "show", "center");
 afterGlitch2.createDialogue(mirella, "<i>Paul finally got arrived backstage. We shook hands as he introduced himself.</i>", "Mirella", "paulBasic", "show", "left");
 afterGlitch2.createDialogue(gaspery, "Gaspery Roberts. I loved your show.", "???");
@@ -548,10 +551,10 @@ afterGlitch2.createDialogue(paul, "...", "Paul", "paulSweaty", "show", "left");
 afterGlitch2.createDialogue(paul, "Of course. Why don't we, uh, get a drink", "Paul", "paulBasic", "show", "left");
 
 let scene1a = new Scene("scene1a", glitch2, concertHall);
-scene1a.createDialogue(generic, "<br>Paul Smith, sometimes known as ‘musical genius,’ or, on a bad day, ‘recovering addict,’ sits atop a stage, speaking into a microphone and sweating from the overhead lights. He presses Play on his laptop.", "Narrator", "paulSweaty", "show", "left");
+scene1a.createDialogue(generic, "Paul Smith, sometimes known as ‘musical genius,’ or, on a bad day, ‘recovering addict,’ sits atop a stage, speaking into a microphone and sweating from the overhead lights. He presses Play on his laptop.", "Narrator", "paulSweaty", "show", "left");
 
 let afterGlitch1 = new Scene("afterGlitch1", scene1a, edwinChurch);
-afterGlitch1.createDialogue(edwin, "<br><i>I’m on the beach, kneeling and vomiting. In an attempt to ground myself, I wade into the ice cold waters of the ocean; it seeps through my clothes and into my soul, it feels like, and in the distance I see the priest—Roberts—making his way toward the church and I hurry to follow him</i>","Edwin", "edwinFrightened", "show", "left");
+afterGlitch1.createDialogue(edwin, "<i>I’m on the beach, kneeling and vomiting. In an attempt to ground myself, I wade into the ice cold waters of the ocean; it seeps through my clothes and into my soul, it feels like, and in the distance I see the priest—Roberts—making his way toward the church and I hurry to follow him</i>","Edwin", "edwinFrightened", "show", "left");
 afterGlitch1.createDialogue(gaspery, "Are you OK? You look unwell.", "Roberts", "gasperyPreistAwkward", "show", "right");
 afterGlitch1.createDialogue(edwin, "<i>There’s something off about him, I can see now. Something about the accent, or the way he’s talking to me, just gives off a wrongness I can’t pinpoint.</i>","Edwin", "edwinBase", "show", "left");
 afterGlitch1.createDialogue(edwin, "Why did you say you were here again? What happened to Father Pike?");
@@ -569,7 +572,7 @@ let scene4 = new Scene("scene4", glitch, edwinForest);
 scene4.createDialogue(edwin, "<i>It was beautiful. I loved taking long walks through the forest—the indifference of nature had a strangely calming quality to it.</i>","Edwin", "edwinHappy", "show", "center");
 scene4.createDialogue(generic, "<i>bushes rustling</i>", "***", "", "hide");
 scene4.createDialogue(edwin, "Who's there?", "Edwin", "edwinBase", "show", "left");
-scene4.createDialogue(gaspery, "<br>Good morning. Forgive me, I didn’t mean to startle you. I’m Roberts. I’m filling in for Father Pike, the usual priest, I believe?", "???", "gasperyPreistAwkward", 'show', "right");
+scene4.createDialogue(gaspery, "Good morning. Forgive me, I didn’t mean to startle you. I’m Roberts. I’m filling in for Father Pike, the usual priest, I believe?", "???", "gasperyPreistAwkward", 'show', "right");
 scene4.createDialogue(edwin, "Edwin St. Andrew. Pleasure to meet you.", "Edwin");
 scene4.createDialogue(gaspery, "Likewise. Have a nice day", "Roberts");
 scene4.createDialogue(edwin, "<i>I stepped forward, into the trees--</i>", "Edwin", "gasperyPreistAwkward", "hide", "right");
@@ -582,14 +585,14 @@ scene2.createDialogue(edwinFather, "Pack your bags. You’re going to Canada. I�
 
 let scene1 = new Scene("scene1", scene2, edwinTable);
 scene1.createDialogue(edwin, "<i>If I hear one more word about her goddamned ayah...</i>", "Edwin", "edwinBase", "show", "left");
-scene1.createDialogue(edwinMother, "<br>You know, I so often find myself thinking about the beauty of British India. The colors were remarkable, but the heat! So incredibly oppressive.", "Mother", "edwinMotherSprite", "show", "right");
+scene1.createDialogue(edwinMother, "You know, I so often find myself thinking about the beauty of British India. The colors were remarkable, but the heat! So incredibly oppressive.", "Mother", "edwinMotherSprite", "show", "right");
 scene1.createDialogue(edwin, "Well, that’s a bit ironic, isn’t it?", "Edwin");
 scene1.createDialogue(edwinMother, "What do you mean?", "Mother");
-scene1.createDialogue(edwin, "<br>A British woman, enjoying privileges gained only through conquest and violence, complaining about the ‘oppressive’ heat?", "Edwin");
-scene1.createDialogue(edwinFather, "<br>Yes, well, we <i>won</i>, didn’t we? Not exactly something new. We fought, we won, India is ours. Simple as that. I’m sure the natives of England weren’t too happy twenty generations ago either, but, well, that’s life, isn’t it?", "Father", "edwinFatherSprite", "show","center");
+scene1.createDialogue(edwin, "A British woman, enjoying privileges gained only through conquest and violence, complaining about the ‘oppressive’ heat?", "Edwin");
+scene1.createDialogue(edwinFather, "Yes, well, we <i>won</i>, didn’t we? Not exactly something new. We fought, we won, India is ours. Simple as that. I’m sure the natives of England weren’t too happy twenty generations ago either, but, well, that’s life, isn’t it?", "Father", "edwinFatherSprite", "show","center");
 scene1.createDialogue(edwin, "Surely we ought to strive to be a bit more civilized than the maniacal grandson of a Viking raider?", "Edwin", "edwinUpset", "show", "left");
 scene1.createDialogue(generic, ". . .", "Family", "none", "hide");
-scene1.createDialogue(edwinFather, "<br>Every advantage you’ve ever had in this life, Edwin, has been because you have descended from the “maniacal grandson of a Viking raider.” You’d do well to be more grateful.", "Father", "edwinFatherSprite", "show", "center");
+scene1.createDialogue(edwinFather, "Every advantage you’ve ever had in this life, Edwin, has been because you have descended from the “maniacal grandson of a Viking raider.” You’d do well to be more grateful.", "Father", "edwinFatherSprite", "show", "center");
 
 if(localStorage.getItem("currentScene")){
     eval(`Scene.setScene(${localStorage.getItem("currentScene")})`);

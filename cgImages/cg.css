@@ -1,8 +1,13 @@
 :root{
-    --dark-color: rgb(92, 34, 14);
-    --light-color: rgb(153, 88, 42);
-    --highlight-color: rgb(255, 226, 206);
+    --dark-color: #2D3047;
+    --light-color: #A799B7;
+    --highlight-color: #93B7BE;
+    --highlight-two: #775d95;
     --inside-color: rgba(32, 32, 32, 0.61);
+}
+
+*{
+    font-family: "Calibri", sans-serif;
 }
 
 path{
@@ -65,7 +70,7 @@ button{
 }
 
 .cgImages:hover{
-    border-color: var(--highlight-color);
+    border-color: var(--highlight-two);
     cursor: pointer;
 }
 

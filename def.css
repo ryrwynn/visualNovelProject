@@ -7,7 +7,7 @@
 
 *{
     border: none;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: "Calibri", sans-serif;
 }
 
 .invisible{
@@ -130,7 +130,7 @@ button:disabled{
     display: block;
     margin-left: 3.75vw;
     margin-right: 3.75vw;
-    margin-top: 0;
+    margin-top: 10px;
     font-size: 1.2vw;
     text-align: left;
     grid-row: 13/17;
@@ -142,7 +142,7 @@ button:disabled{
     font-size: 2vw;
     grid-row: 13/14;
     grid-column: 3/6;
-    z-index: 2;
+    z-index: 5;
     color: var(--text-color);
 }
 
@@ -171,10 +171,14 @@ button:disabled{
 }
 
 .btns{
-    background-color: rgba(128, 128, 128, 0.832);
+    background-color: #93B7BE;
     height: calc(3.75vw - 10px);
     width: calc(3.75vw - 10px);
     margin: 10px;
     grid-column: 24/25;
     border-radius: 20px;
+}
+
+svg{
+    fill: #2D3047;
 }
