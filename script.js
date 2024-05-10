@@ -48,7 +48,7 @@ let mirellaSister = new Sprite("cgImages/mirellaSister.png");
 let gasperyCasualAwkward = new Sprite("cgImages/gasperyCasualAwkward.png");
 let gasperyCasualSmile = new Sprite("cgImages/gasperyCasualSmile.png");
 let gasperyCasualTalking = new Sprite("cgImages/gasperyCasualTalking.png");
-let gasperyBloodTalking = new Sprite("cgImages/gasperyBloodTalking.png");
+let gasperyBloodTalking = new Sprite("cgImages/gasperyBloodTalking.PNG");
 
 let hotelRoom = new Background("baseImages/hotel.png", "olive");
 let airport = new Background("baseImages/airport.png", "olive");
