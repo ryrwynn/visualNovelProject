@@ -16,7 +16,7 @@ let mirella = new Character("Mirella", "darkgreen");
 
 let olive = new Character("Olive", "olive");
 let husband = new Character("Husband", "olive");
-let aretta = new Character("Aretta", "olive");t
+let aretta = new Character("Aretta", "olive");
 
 let gaspery = new Character("Gaspery", "navy");
 let zoey = new Character("Zoey", "navy");
