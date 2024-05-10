@@ -7,21 +7,21 @@ let glitchedForest = new Background("baseImages/forestGlitched.png", 'edwin');
 
 let generic = new Character("NPC", "grey");
 
-let edwin = new Character("Edwin", "#3A1A1A");
-let edwinMother = new Character("Mother", "#311212");
-let edwinFather = new Character("Father", "#572525");
+let edwin = new Character("Edwin", "brown");
+let edwinMother = new Character("Mother", "brown");
+let edwinFather = new Character("Father", "brown");
 
-let paul = new Character("Paul", "#645E9D");
-let mirella = new Character("Mirella", "#392B58");
+let paul = new Character("Paul", "darkgreen");
+let mirella = new Character("Mirella", "darkgreen");
 
-let olive = new Character("Olive", "#341718");
-let husband = new Character("Husband", "#512025");
-let arretta = new Character("Arretta", "#2F3E46");
+let olive = new Character("Olive", "olive");
+let husband = new Character("Husband", "olive");
+let arretta = new Character("Arretta", "olive");
 
-let gaspery = new Character("Gaspery", "#84A98C");
-let zoey = new Character("Zoey", "#354F52");
-let natalie = new Character("Natalie", "#52796F");
-let ephrem = new Character("Ephrem", "#2F3E46");
+let gaspery = new Character("Gaspery", "navy");
+let zoey = new Character("Zoey", "navy");
+let natalie = new Character("Natalie", "navy");
+let ephrem = new Character("Ephrem", "navy");
 
 let edwinBase = new Sprite("cgImages/edwinBase.png");
 let edwinUpset = new Sprite("cgImages/edwinUpset.png");
